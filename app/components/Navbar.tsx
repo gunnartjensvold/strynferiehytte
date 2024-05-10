@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Bai_Jamjuree } from 'next/font/google'
 import Button from './Button'
+import LinkButton from './LinkButton'
 
 const BaiJamjuree = Bai_Jamjuree({ subsets: ['latin'], weight: '600' })
 
@@ -56,7 +57,10 @@ export default function Navbar() {
         </Link>
       </div>
 
-      <Button text='Call us' />
+      <LinkButton
+        href='tel:+47 918 79 843'
+        text='Call us'
+      />
     </nav>
   )
 }

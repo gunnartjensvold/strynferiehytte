@@ -1,5 +1,5 @@
-import Image from 'next/image'
 import Button from './components/Button'
+import LinkButton from './components/LinkButton'
 import CallOutlinedIcon from '@mui/icons-material/CallOutlined'
 import { getImageProps } from 'next/image'
 
@@ -51,10 +51,11 @@ export default function Home() {
               At an idyllic cabin surrounded by the most beautiful <br></br> nature Norway has to offer.
             </p>
             <div className='flex gap-3'>
-              <Button
+              <LinkButton
                 text='Call us'
+                href='tel:+47 918 79 843'
                 icon={<CallOutlinedIcon />}
-              ></Button>
+              ></LinkButton>
               <Button
                 text='Find dates'
                 type='secondary'
