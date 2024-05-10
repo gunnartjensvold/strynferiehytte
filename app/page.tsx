@@ -45,9 +45,9 @@ export default function Home() {
               style={{ width: '100%', height: 'auto' }}
             />
           </picture>
-          <div className='absolute px-2 pt-14 sm:pt-0 inset-0 flex flex-col gap-4 items-center justify-center text-center z-10 text-white'>
-            <h1 className='text-3xl sm:text-5xl  md:text-6xl'>Experience Norway</h1>
-            <p className=' text-lg sm:text-xl  md:text-2xl'>
+          <div className='absolute px-8 pt-14 sm:pt-0 inset-0 flex flex-col gap-4 items-center justify-center text-center z-10 text-white'>
+            <h1 className='text-5xl  md:text-6xl'>Experience Norway</h1>
+            <p className=' text-xl  md:text-2xl'>
               At an idyllic cabin surrounded by the most beautiful <br></br> nature Norway has to offer.
             </p>
             <div className='flex gap-3'>
