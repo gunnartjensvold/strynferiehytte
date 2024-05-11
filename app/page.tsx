@@ -10,7 +10,7 @@ export default function Home() {
       {/* Hero */}
       <section
         id='hero'
-        className='flex min-h-[calc(100vw*4/3-50px)] md:min-h-[min(calc(100vw*3/4-50px),1060px)] bg-black/30'
+        className='flex min-h-[min(100vw/3*4-50px,max(80vh,700px))] md:min-h-[min(100vw/4*3-50px,max(80vh,700px))] bg-black/30'
       >
         <div className='w-full flex relative pt-20 pb-8 items-center justify-center'>
           <div className='absolute inset-0 flex items-center overflow-hidden -z-10'>
