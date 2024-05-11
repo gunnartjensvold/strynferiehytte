@@ -1,53 +1,30 @@
 import Button from './components/Button'
+import DesktopAndMobileImage from './components/DesktopAndMobileImage'
+import ExperienceCard from './components/ExperienceCard'
 import LinkButton from './components/LinkButton'
 import CallOutlinedIcon from '@mui/icons-material/CallOutlined'
-import { getImageProps } from 'next/image'
 
 export default function Home() {
-  const common = { alt: 'Cabin in the countryside', sizes: '100vw' }
-  const {
-    props: { srcSet: desktop }
-  } = getImageProps({
-    ...common,
-    height: 3024,
-    width: 4032,
-    priority: true,
-    src: '/images/desktop/hero.jpeg'
-  })
-  const {
-    props: { srcSet: mobile, ...rest }
-  } = getImageProps({
-    ...common,
-    width: 3024,
-    height: 4032,
-    priority: true,
-    src: '/images/mobile/hero.jpeg'
-  })
-
   return (
     <main>
+      {/* Hero */}
       <section
         id='hero'
-        className='max-h-[min(90vh,1016px)] flex relative'
+        className='aspect-[3/4] md:aspect-[4/3] w-full max-h-[90vh] overflow-hidden'
       >
-        <div className='flex-1 flex items-center overflow-hidden before:content-[""] before:absolute before:inset-0 before:bg-black/50 '>
-          <picture>
-            <source
-              media='(min-width: 1000px)'
-              srcSet={desktop}
-            />
-            <source
-              media='(min-width: 0px)'
-              srcSet={mobile}
-            />
-            <img
-              {...rest}
-              style={{ width: '100%', height: 'auto' }}
-            />
-          </picture>
-          <div className='absolute px-8 pt-14 sm:pt-0 inset-0 flex flex-col gap-4 items-center justify-center text-center z-10 text-white'>
+        <div className='h-full  flex relative pt-20 items-center justify-center'>
+          <div className='absolute inset-0 -z-10'>
+            <div className='absolute inset-0 z-10 bg-black/50'></div>
+            <DesktopAndMobileImage
+              swapPictureBreakpoint={768}
+              sharedProps={{ alt: 'Cabin in the countryside', sizes: '100vw', priority: true }}
+              desktopProps={{ url: '/images/desktop/hero.jpeg' }}
+              mobileProps={{ url: '/images/mobile/hero.jpeg' }}
+            ></DesktopAndMobileImage>
+          </div>
+          <div className='px-8 flex flex-col gap-4 items-center justify-center text-center text-white'>
             <h1 className='text-5xl  md:text-6xl'>Experience Norway</h1>
-            <p className=' text-xl  md:text-2xl'>
+            <p className=' text-xl  md:text-2xl '>
               At an idyllic cabin surrounded by the most beautiful <br></br> nature Norway has to offer.
             </p>
             <div className='flex gap-3'>
@@ -64,6 +41,25 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Experiences */}
+      {/* <section
+        id='experiences'
+        className='flex flex-col items-center justify-center gap-12 px-8 pt-12'
+      >
+        <h1 className='text-4xl'>Beautiful secenery at your doorstep</h1>
+        <div className='flex justify-between'>
+          <ExperienceCard
+            headerIcon={<CallOutlinedIcon fontSize='inherit' />}
+            headerTitle='Experience Norway'
+            headerSubtitle='Call us'
+            image={{
+              url: '/images/skuten.jpeg',
+              alt: 'View of Skuten in Norway, a popular hiking trail close to the cabin'
+            }}
+          ></ExperienceCard>
+        </div>
+      </section> */}
     </main>
   )
 }

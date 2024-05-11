@@ -10,7 +10,7 @@ export default function Navbar() {
   return (
     <nav className='flex h-20 px-3 sm:px-8 items-center justify-between text-white'>
       <Link
-        href={'/'}
+        href={'/#hero'}
         className={BaiJamjuree.className + ' flex items-center gap-2.5 group'}
       >
         <Image
@@ -24,22 +24,22 @@ export default function Navbar() {
         <span className='font-semibold tracking-wide group-hover:text-primary'>Stryn Ferie Hytte</span>
       </Link>
 
-      <div className='gap-8 font-semibold md:flex hidden'>
+      <div className='gap-8 font-semibold lg:flex hidden'>
         <Link
           className='hover:text-primary'
-          href={'/'}
+          href={'/#hero'}
         >
           Home
         </Link>
         <Link
+          href={'/#experiences'}
           className='hover:text-primary'
-          href={'/'}
         >
-          Home
+          Experiences
         </Link>
         <Link
-          className='hover:text-primary'
           href={'/'}
+          className='hover:text-primary'
         >
           Home
         </Link>
