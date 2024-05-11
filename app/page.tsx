@@ -3,6 +3,7 @@ import DesktopAndMobileImage from './components/DesktopAndMobileImage'
 import ExperienceCard from './components/ExperienceCard'
 import LinkButton from './components/LinkButton'
 import CallOutlinedIcon from '@mui/icons-material/CallOutlined'
+import HikingIcon from '@mui/icons-material/Hiking'
 
 export default function Home() {
   return (
@@ -50,12 +51,14 @@ export default function Home() {
         <h1 className='text-4xl'>Beautiful secenery at your doorstep</h1>
         <div className='flex justify-between'>
           <ExperienceCard
-            headerIcon={<CallOutlinedIcon fontSize='inherit' />}
-            headerTitle='Experience Norway'
-            headerSubtitle='Call us'
+            headerIcon={<HikingIcon fontSize='inherit' />}
+            headerTitle='Skuten'
+            headerSubtitle='Nearby hiking trail'
             image={{
               url: '/images/skuten.jpeg',
-              alt: 'View of Skuten in Norway, a popular hiking trail close to the cabin'
+              alt: 'View of Skuten in Norway, a popular hiking trail close to the cabin',
+              width: 3024,
+              height: 4032
             }}
           ></ExperienceCard>
         </div>
