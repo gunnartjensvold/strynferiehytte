@@ -10,7 +10,7 @@ export default function Home() {
       {/* Hero */}
       <section
         id='hero'
-        className='flex min-h-[calc(100vw*4/3)] md:min-h-[min(calc(100vw*3/4),1060px)] bg-black/30'
+        className='flex min-h-[calc(100vw*4/3-50px)] md:min-h-[min(calc(100vw*3/4-50px),1060px)] bg-black/30'
       >
         <div className='w-full flex relative pt-20 pb-8 items-center justify-center'>
           <div className='absolute inset-0 flex items-center overflow-hidden -z-10'>
@@ -43,7 +43,7 @@ export default function Home() {
       </section>
 
       {/* Experiences */}
-      {/* <section
+      <section
         id='experiences'
         className='flex flex-col items-center justify-center gap-12 px-8 pt-12'
       >
@@ -59,7 +59,7 @@ export default function Home() {
             }}
           ></ExperienceCard>
         </div>
-      </section> */}
+      </section>
     </main>
   )
 }

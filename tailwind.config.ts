@@ -15,7 +15,7 @@ const config: Config = {
         error: '#9F6060'
       },
       screens: {
-        'xs': '320px'
+        'xs': '360px'
       }
     }
   },
