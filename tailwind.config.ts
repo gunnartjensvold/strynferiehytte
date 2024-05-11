@@ -13,6 +13,9 @@ const config: Config = {
         secondary: '#938C6C',
         green: '#49504B',
         error: '#9F6060'
+      },
+      screens: {
+        'xs': '320px'
       }
     }
   },
