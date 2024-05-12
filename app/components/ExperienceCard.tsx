@@ -15,7 +15,7 @@ type Props = {
 
 export default function ExperienceCard({ header, image, footer }: Props) {
   return (
-    <div className='flex basis-full drop-shadow-2xl sm:basis-[calc(50%-1rem)] sm:last-of-type:mx-auto lg:basis-[calc(33%-2rem*2/3)] lg:last-of-type:mx-0 flex-col gap-6 py-6 bg-white rounded-2xl'>
+    <div className='flex drop-shadow-2xl basis-full sm:basis-[calc(50%-1rem)] sm:last-of-type:mx-auto lg:basis-[calc(33%-2rem*2/3)] lg:last-of-type:mx-0 flex-col gap-6 py-6 bg-white rounded-2xl'>
       {/* Header */}
       <div className='flex gap-4 px-4'>
         <span className='text-6xl text-green'>{header.icon}</span>

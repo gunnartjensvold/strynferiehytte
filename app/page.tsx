@@ -46,7 +46,7 @@ export default function Home() {
       {/* Experiences */}
       <section
         id='experiences'
-        className='flex flex-col items-center justify-center gap-12 px-8 pt-12'
+        className='flex flex-col items-center justify-center gap-12 px-4 sm:px-8 pt-12'
       >
         <h1 className='text-2xl sm:text-3xl md:text-4xl text-center'>Beautiful secenery at your doorstep</h1>
         <div className='w-full flex justify-between flex-wrap gap-8'>
@@ -59,7 +59,7 @@ export default function Home() {
             image={{
               src: '/images/skuten.jpeg',
               alt: 'View of Skuten in Norway, a popular hiking trail close to the cabin',
-              sizes: '25vw',
+              sizes: '(min-width: 640px)33vw, (min-width: 768px) 50vw, 100vw',
               width: 3024,
               height: 4032
             }}
@@ -77,7 +77,7 @@ export default function Home() {
             image={{
               src: '/images/geiranger.jpeg',
               alt: 'View of Geiranger in Norway, a popular hiking trail 2 hour drive from the cabin',
-              sizes: '25vw',
+              sizes: '(min-width: 640px)33vw, (min-width: 768px) 50vw, 100vw',
               width: 3024,
               height: 4032
             }}
@@ -95,7 +95,7 @@ export default function Home() {
             image={{
               src: '/images/lodalen.jpeg',
               alt: 'View of the glaciers in Lodalen, a popular tourist attraction close to the cabin',
-              sizes: '25vw',
+              sizes: '(min-width: 640px)33vw, (min-width: 768px) 50vw, 100vw',
               width: 3024,
               height: 4032
             }}
