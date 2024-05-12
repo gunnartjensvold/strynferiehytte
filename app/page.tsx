@@ -17,10 +17,9 @@ export default function Home() {
           <div className='absolute inset-0 flex items-center overflow-hidden -z-10'>
             <div className='absolute inset-0 z-10 bg-black/50'></div>
             <DesktopAndMobileImage
-              swapPictureBreakpoint={768}
-              sharedProps={{ alt: 'Cabin in the countryside', sizes: '100vw', priority: true }}
-              desktopProps={{ url: '/images/desktop/hero.jpeg' }}
-              mobileProps={{ url: '/images/mobile/hero.jpeg' }}
+              shared={{ alt: 'Cabin in the countryside', sizes: '100vw', priority: true }}
+              desktopImage={{ src: '/images/desktop/hero.jpeg', breakPoint: 768, width: 4032, height: 3024 }}
+              mobileImage={{ src: '/images/mobile/hero.jpeg', width: 3024, height: 4032 }}
             ></DesktopAndMobileImage>
           </div>
           <div className='px-8 flex flex-col gap-2 xs:gap-4 items-center justify-center text-center text-white'>

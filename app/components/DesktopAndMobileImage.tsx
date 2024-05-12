@@ -1,29 +1,42 @@
 import { getImageProps } from 'next/image'
 
-export default function DesktopAndMobileImage({ swapPictureBreakpoint, sharedProps, desktopProps, mobileProps }: { swapPictureBreakpoint: number; sharedProps: { alt: string; sizes: string; priority: boolean }; desktopProps: { url: string }; mobileProps: { url: string } }) {
+type Props = {
+  shared: {
+    alt: string
+    sizes: string
+    priority: boolean
+  }
+  desktopImage: {
+    src: string
+    width: number
+    height: number
+    breakPoint: number
+  }
+  mobileImage: {
+    src: string
+    width: number
+    height: number
+  }
+}
+
+export default function DesktopAndMobileImage({ shared, desktopImage, mobileImage }: Props) {
   const {
     props: { srcSet: desktop }
   } = getImageProps({
-    ...sharedProps,
-    // src: '/images/desktop/hero.jpeg'
-    priority: sharedProps.priority,
-    src: desktopProps.url,
-    fill: true
+    ...shared,
+    ...desktopImage
   })
   const {
     props: { srcSet: mobile, ...rest }
   } = getImageProps({
-    ...sharedProps,
-    priority: sharedProps.priority,
-    src: mobileProps.url,
-    fill: true
-    // src: '/images/mobile/hero.jpeg'
+    ...shared,
+    ...mobileImage
   })
   return (
     <div className='relative'>
       <picture>
         <source
-          media={`(min-width: ${swapPictureBreakpoint}px)`}
+          media={`(min-width: ${desktopImage.breakPoint}px)`}
           srcSet={desktop}
         />
         <source srcSet={mobile} />
