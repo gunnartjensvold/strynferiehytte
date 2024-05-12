@@ -1,9 +1,17 @@
 import Image from 'next/image'
 
-export default function ResponsiveImage({ url, alt, sizes, width, height }: { url: string; alt: string; sizes: string; width: number; height: number }) {
+export type ResponsiveImageProps = {
+  src: string
+  alt: string
+  sizes: string
+  width: number
+  height: number
+}
+
+export default function ResponsiveImage({ src, alt, sizes, width, height }: ResponsiveImageProps) {
   return (
     <Image
-      src={url}
+      src={src}
       alt={alt}
       sizes={sizes}
       width={width}

@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`${inter.className} antialiased text-balance text-brown`}>
+      <body className={`${inter.className} antialiased text-brown`}>
         <header className='absolute z-50 top-0 left-0 right-0'>
           <Navbar />
         </header>

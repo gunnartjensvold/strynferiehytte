@@ -4,6 +4,7 @@ import ExperienceCard from './components/ExperienceCard'
 import LinkButton from './components/LinkButton'
 import CallOutlinedIcon from '@mui/icons-material/CallOutlined'
 import HikingIcon from '@mui/icons-material/Hiking'
+import DirectionsCarOutlinedIcon from '@mui/icons-material/DirectionsCarOutlined'
 
 export default function Home() {
   return (
@@ -23,8 +24,8 @@ export default function Home() {
             ></DesktopAndMobileImage>
           </div>
           <div className='px-8 flex flex-col gap-2 xs:gap-4 items-center justify-center text-center text-white'>
-            <h1 className=' text-4xl xs:text-5xl  md:text-6xl'>Experience Norway</h1>
-            <p className=' xs:text-xl  md:text-2xl '>
+            <h1 className='text-4xl xs:text-5xl  md:text-6xl'>Experience Norway</h1>
+            <p className='xs:text-xl md:text-2xl text-balance'>
               At an idyllic cabin surrounded by the most beautiful <br></br> nature Norway has to offer.
             </p>
             <div className='flex gap-3'>
@@ -47,19 +48,62 @@ export default function Home() {
         id='experiences'
         className='flex flex-col items-center justify-center gap-12 px-8 pt-12'
       >
-        <h1 className='text-4xl'>Beautiful secenery at your doorstep</h1>
-        <div className='flex justify-between'>
+        <h1 className='text-2xl sm:text-3xl md:text-4xl text-center'>Beautiful secenery at your doorstep</h1>
+        <div className='w-full flex justify-between flex-wrap gap-8'>
           <ExperienceCard
-            headerIcon={<HikingIcon fontSize='inherit' />}
-            headerTitle='Skuten'
-            headerSubtitle='Nearby hiking trail'
+            header={{
+              icon: <HikingIcon fontSize='inherit' />,
+              title: 'Skuten',
+              subtitle: 'Nearby hiking trail'
+            }}
             image={{
-              url: '/images/skuten.jpeg',
+              src: '/images/skuten.jpeg',
               alt: 'View of Skuten in Norway, a popular hiking trail close to the cabin',
+              sizes: '25vw',
               width: 3024,
               height: 4032
             }}
-          ></ExperienceCard>
+            footer={{
+              text: 'Skuten is one of many hiking trails in the area. The trip takes around 30 to 60 minutes.',
+              link: 'https://ut.no/turforslag/116929377/skuten-pa-kirkeeide'
+            }}
+          />
+          <ExperienceCard
+            header={{
+              icon: <DirectionsCarOutlinedIcon fontSize='inherit' />,
+              title: 'Geiranger',
+              subtitle: '2 hour drive'
+            }}
+            image={{
+              src: '/images/geiranger.jpeg',
+              alt: 'View of Geiranger in Norway, a popular hiking trail 2 hour drive from the cabin',
+              sizes: '25vw',
+              width: 3024,
+              height: 4032
+            }}
+            footer={{
+              text: 'The beautiful views of geiranger can be experienced through a short 1 hour drive.',
+              link: 'https://www.visitnorway.no/reisemal/vestlandet/geirangerfjorden/'
+            }}
+          />
+          <ExperienceCard
+            header={{
+              icon: <DirectionsCarOutlinedIcon fontSize='inherit' />,
+              title: 'Lodalen',
+              subtitle: '1 hour drive'
+            }}
+            image={{
+              src: '/images/lodalen.jpeg',
+              alt: 'View of the glaciers in Lodalen, a popular tourist attraction close to the cabin',
+              sizes: '25vw',
+              width: 3024,
+              height: 4032
+            }}
+            footer={{
+              text: 'Lodalen is one of the worlds most popular tourist attractions.',
+              link: 'https://www.nordfjord.no/lodalen'
+            }}
+          />
         </div>
       </section>
     </main>
