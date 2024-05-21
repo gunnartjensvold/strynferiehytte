@@ -29,14 +29,15 @@ export default function ExperienceCard({ header, image, footer }: Props) {
         <ResponsiveImage {...image}></ResponsiveImage>
       </div>
       {/* Footer */}
-      <div className='flex grow px-4 justify-between text-green'>
-        <p className='flex flex-col gap-4'>
-          {footer.text}
+      <div className='flex grow flex-col px-4 gap-1 justify-between text-green'>
+        <p>{footer.text}</p>
+        <p>
+          Read more{' '}
           <a
-            className='font-bold mt-auto underline underline-offset-4'
+            className='font-bold underline underline-offset-4'
             href={footer.link}
           >
-            learn more
+            here
           </a>
         </p>
       </div>
