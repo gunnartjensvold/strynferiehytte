@@ -35,7 +35,7 @@ export default function ExperienceCard({ header, image, footer }: Props) {
           className='font-bold underline underline-offset-4'
           href={footer.link}
         >
-          Read more
+          Learn more
         </a>
       </div>
     </div>
