@@ -32,12 +32,12 @@ export default function ExperienceCard({ header, image, footer }: Props) {
       <div className='flex grow flex-col px-4 gap-1 justify-between text-green'>
         <p>{footer.text}</p>
         <p>
-          Read more{' '}
+          Read more about{' '}
           <a
             className='font-bold underline underline-offset-4'
             href={footer.link}
           >
-            here
+            {header.title}
           </a>
         </p>
       </div>
