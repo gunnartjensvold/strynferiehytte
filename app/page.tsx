@@ -5,10 +5,21 @@ import LinkButton from './components/LinkButton'
 import CallOutlinedIcon from '@mui/icons-material/CallOutlined'
 import HikingIcon from '@mui/icons-material/Hiking'
 import DirectionsCarOutlinedIcon from '@mui/icons-material/DirectionsCarOutlined'
+import LocalLaundryServiceOutlinedIcon from '@mui/icons-material/LocalLaundryServiceOutlined'
+import KitchenOutlinedIcon from '@mui/icons-material/KitchenOutlined'
+import CountertopsOutlinedIcon from '@mui/icons-material/CountertopsOutlined'
+import ShowerOutlinedIcon from '@mui/icons-material/ShowerOutlined'
+import OutdoorGrillOutlinedIcon from '@mui/icons-material/OutdoorGrillOutlined'
+import FireplaceOutlinedIcon from '@mui/icons-material/FireplaceOutlined'
+import TvOutlinedIcon from '@mui/icons-material/TvOutlined'
+import DeckOutlinedIcon from '@mui/icons-material/DeckOutlined'
+import NaturePeopleOutlinedIcon from '@mui/icons-material/NaturePeopleOutlined'
+import FenceOutlinedIcon from '@mui/icons-material/FenceOutlined'
+import WifiOutlinedIcon from '@mui/icons-material/WifiOutlined'
 
 export default function Home() {
   return (
-    <main>
+    <main className='flex flex-col gap-24'>
       {/* Hero */}
       <section
         id='hero'
@@ -46,7 +57,7 @@ export default function Home() {
       {/* Experiences */}
       <section
         id='experiences'
-        className='flex flex-col items-center justify-center gap-12 px-4 sm:px-8 pt-12'
+        className='flex flex-col items-center justify-center gap-12 px-4 sm:px-8'
       >
         <h1 className='text-2xl sm:text-3xl md:text-4xl text-center'>Beautiful secenery at your doorstep</h1>
         <div className='w-full flex justify-between flex-wrap gap-8'>
@@ -105,6 +116,39 @@ export default function Home() {
             }}
           />
         </div>
+      </section>
+
+      {/* Cabin */}
+      <section
+        id='experiences'
+        className='flex flex-col-reverse lg:flex-row items-center justify-center gap-12 px-4 sm:px-8'
+      >
+        <div className='flex flex-col gap-8 py-8 w-fit shrink'>
+          <h1 className='text-2xl sm:text-3xl md:text-4xl text-left'>The cabin</h1>
+          <ul className='text-xl flex flex-col gap-6 break-words text-green'>
+            <li>The cabin acommodates up to 7 people</li>
+            <li>It is located in Stryn, a peaceful town in western Norway</li>
+            <li>There are many nearby mountain trails and tourist attractions, such as Loen Skylift and Geiranger</li>
+            <li>
+              <p>The cabin is equipped with everything you need</p>
+              <div className='text-5xl flex flex-wrap gap-4 mt-4 text-brown'>
+                <LocalLaundryServiceOutlinedIcon fontSize='inherit' />
+                <KitchenOutlinedIcon fontSize='inherit' />
+                <WifiOutlinedIcon fontSize='inherit' />
+                <CountertopsOutlinedIcon fontSize='inherit' />
+                <ShowerOutlinedIcon fontSize='inherit' />
+                <OutdoorGrillOutlinedIcon fontSize='inherit' />
+                <FireplaceOutlinedIcon fontSize='inherit' />
+                <TvOutlinedIcon fontSize='inherit' />
+                <DeckOutlinedIcon fontSize='inherit' />
+                <NaturePeopleOutlinedIcon fontSize='inherit' />
+                <FenceOutlinedIcon fontSize='inherit' />
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div className='flex justify-between flex-wrap gap-8 aspect-square w-full sm:max-w-screen-sm lg:min-w-[30rem] xl:min-w-[40rem] bg-black'></div>
       </section>
     </main>
   )
