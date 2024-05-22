@@ -1,7 +1,11 @@
+// Components
 import Button from './components/Button'
 import DesktopAndMobileImage from './components/DesktopAndMobileImage'
 import ExperienceCard from './components/ExperienceCard'
 import LinkButton from './components/LinkButton'
+import { EmblaCarousel } from './components/Carousel'
+
+// Icons
 import CallOutlinedIcon from '@mui/icons-material/CallOutlined'
 import HikingIcon from '@mui/icons-material/Hiking'
 import DirectionsCarOutlinedIcon from '@mui/icons-material/DirectionsCarOutlined'
@@ -121,9 +125,9 @@ export default function Home() {
       {/* Cabin */}
       <section
         id='experiences'
-        className='flex flex-col-reverse lg:flex-row items-center justify-center gap-12 px-4 sm:px-8'
+        className='flex flex-col max-w-5xl mx-auto xl:max-w-fit xl:flex-row items-center justify-center lg:gap-12 gap-8 px-4 sm:px-8'
       >
-        <div className='flex flex-col gap-8 py-8 w-fit shrink'>
+        <div className='flex flex-col gap-8 py-8 basis-1/3 flex-1'>
           <h1 className='text-2xl sm:text-3xl md:text-4xl text-left'>The cabin</h1>
           <ul className='text-xl flex flex-col gap-6 break-words text-green'>
             <li>The cabin acommodates up to 7 people</li>
@@ -148,7 +152,9 @@ export default function Home() {
           </ul>
         </div>
 
-        <div className='flex justify-between flex-wrap gap-8 aspect-square w-full sm:max-w-screen-sm lg:min-w-[30rem] xl:min-w-[40rem] bg-black'></div>
+        <div className='items-center basis-1/2'>
+          <EmblaCarousel />
+        </div>
       </section>
     </main>
   )
