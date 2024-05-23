@@ -38,10 +38,10 @@ export default function Navbar() {
           Experiences
         </Link>
         <Link
-          href={'/'}
+          href={'/#cabin'}
           className='hover:text-primary'
         >
-          Home
+          Cabin
         </Link>
         <Link
           className='hover:text-primary'

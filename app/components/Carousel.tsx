@@ -24,10 +24,10 @@ export function EmblaCarousel() {
   return (
     <div>
       <div
-        className='embla rounded-2xl aspect-[4/3]'
+        className='embla rounded-2xl'
         ref={emblaRef}
       >
-        <div className='embla__container cursor-pointer'>
+        <div className='embla__container cursor-pointer relative'>
           <ResponsiveImage
             src='/images/desktop/hero.jpeg'
             alt='Cabin in the countryside'

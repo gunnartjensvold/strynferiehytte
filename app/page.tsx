@@ -124,7 +124,7 @@ export default function Home() {
 
       {/* Cabin */}
       <section
-        id='experiences'
+        id='cabin'
         className='flex flex-col max-w-5xl mx-auto xl:max-w-fit xl:flex-row items-center justify-center lg:gap-12 gap-8 px-4 sm:px-8'
       >
         <div className='flex flex-col gap-8 py-8 basis-1/3 flex-1'>
@@ -135,7 +135,7 @@ export default function Home() {
             <li>There are many nearby mountain trails and tourist attractions, such as Loen Skylift and Geiranger</li>
             <li>
               <p>The cabin is equipped with everything you need</p>
-              <div className='text-5xl flex flex-wrap gap-4 mt-4 text-brown'>
+              <div className='text-4xl sm:text-5xl flex flex-wrap gap-4 mt-4 text-brown'>
                 <LocalLaundryServiceOutlinedIcon fontSize='inherit' />
                 <KitchenOutlinedIcon fontSize='inherit' />
                 <WifiOutlinedIcon fontSize='inherit' />
