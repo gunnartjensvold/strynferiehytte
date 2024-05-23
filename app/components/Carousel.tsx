@@ -22,28 +22,36 @@ export function EmblaCarousel() {
   const { selectedSnap, snapCount } = useSelectedSnapDisplay(emblaApi)
 
   return (
-    <div
-      className='embla'
-      ref={emblaRef}
-    >
-      <div className='embla__container'>
-        <ResponsiveImage
-          src='/images/desktop/hero.jpeg'
-          alt='Cabin in the countryside'
-          sizes='(min-width: 1280px) 50vw ,100vw'
-          width={4032}
-          height={3024}
-        />
-        <ResponsiveImage
-          src='/images/desktop/hero.jpeg'
-          alt='Cabin in the countryside'
-          sizes=' (min-width: 1280px) 50vw , 100vw'
-          width={4032}
-          height={3024}
-        />
+    <div>
+      <div
+        className='embla rounded-2xl aspect-[4/3]'
+        ref={emblaRef}
+      >
+        <div className='embla__container cursor-pointer'>
+          <ResponsiveImage
+            src='/images/desktop/hero.jpeg'
+            alt='Cabin in the countryside'
+            sizes='(min-width: 1280px) 50vw, 100vw'
+            width={4032}
+            height={3024}
+          />
+          <ResponsiveImage
+            src='/images/desktop/1.jpeg'
+            alt='Cabin in the countryside'
+            sizes=' (min-width: 1280px) 50vw, 100vw'
+            width={4032}
+            height={3024}
+          />
+          <ResponsiveImage
+            src='/images/desktop/2.jpeg'
+            alt='Cabin in the countryside'
+            sizes=' (min-width: 1280px) 50vw, 100vw'
+            width={4032}
+            height={3024}
+          />
+        </div>
       </div>
-
-      <div className='flex py-4 px-1 justify-between items-center'>
+      <div className='flex pt-4 pb-1 px-1 justify-between items-center text-xl'>
         <div className='flex gap-2'>
           <Button
             type='secondary'
