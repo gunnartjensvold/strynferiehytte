@@ -125,7 +125,7 @@ export default function Home() {
       {/* Cabin */}
       <section
         id='cabin'
-        className='flex flex-col max-w-5xl mx-auto xl:max-w-fit xl:flex-row items-center justify-center lg:gap-12 gap-8 px-4 sm:px-8'
+        className='flex flex-col max-w-4xl mx-auto xl:max-w-fit xl:flex-row items-center justify-center lg:gap-12 gap-8 px-4 sm:px-8'
       >
         <div className='flex flex-col gap-8 py-8 basis-1/3'>
           <h1 className='text-2xl sm:text-3xl md:text-4xl text-left'>The cabin</h1>
