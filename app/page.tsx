@@ -127,7 +127,7 @@ export default function Home() {
         id='cabin'
         className='flex flex-col max-w-5xl mx-auto xl:max-w-fit xl:flex-row items-center justify-center lg:gap-12 gap-8 px-4 sm:px-8'
       >
-        <div className='flex flex-col gap-8 py-8 basis-1/3 flex-1'>
+        <div className='flex flex-col gap-8 py-8 basis-1/3'>
           <h1 className='text-2xl sm:text-3xl md:text-4xl text-left'>The cabin</h1>
           <ul className='text-xl flex flex-col gap-6 break-words text-green'>
             <li>The cabin acommodates up to 7 people</li>

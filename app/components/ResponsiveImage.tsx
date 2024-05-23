@@ -20,6 +20,6 @@ export default function ResponsiveImage({ src, alt, sizes, width, height }: Resp
         width: '100%',
         height: 'auto'
       }}
-    ></Image>
+    />
   )
 }
