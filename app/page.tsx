@@ -20,6 +20,8 @@ import DeckOutlinedIcon from '@mui/icons-material/DeckOutlined'
 import NaturePeopleOutlinedIcon from '@mui/icons-material/NaturePeopleOutlined'
 import FenceOutlinedIcon from '@mui/icons-material/FenceOutlined'
 import WifiOutlinedIcon from '@mui/icons-material/WifiOutlined'
+import AlternateEmailOutlinedIcon from '@mui/icons-material/AlternateEmailOutlined'
+import { Calendar } from './components/Calendar'
 
 export default function Home() {
   return (
@@ -49,10 +51,11 @@ export default function Home() {
                 href='tel:+47 918 79 843'
                 icon={<CallOutlinedIcon />}
               ></LinkButton>
-              <Button
+              <LinkButton
                 text='Find dates'
                 type='secondary'
-              ></Button>
+                href='/#availability'
+              ></LinkButton>
             </div>
           </div>
         </div>
@@ -125,9 +128,9 @@ export default function Home() {
       {/* Cabin */}
       <section
         id='cabin'
-        className='flex flex-col max-w-4xl mx-auto xl:max-w-fit xl:flex-row items-center justify-center lg:gap-12 gap-8 px-4 sm:px-8'
+        className='flex flex-col xl:flex-row xl:items-center lg:gap-12 gap-8 px-4 sm:px-8'
       >
-        <div className='flex flex-col gap-8 py-8 basis-1/3'>
+        <div className='flex flex-col gap-8 py-8 basis-1/3 grow shrink'>
           <h1 className='text-2xl sm:text-3xl md:text-4xl text-left'>The cabin</h1>
           <ul className='text-xl flex flex-col gap-6 break-words text-green'>
             <li>The cabin acommodates up to 7 people</li>
@@ -152,8 +155,35 @@ export default function Home() {
           </ul>
         </div>
 
-        <div className='items-center basis-1/2'>
+        <div className='items-center basis-1/2 shrink-0 max-w-screen-lg'>
           <EmblaCarousel />
+        </div>
+      </section>
+
+      {/* Availability */}
+      <section
+        id='availability'
+        className='flex flex-col justify-center gap-12 px-4 sm:px-8'
+      >
+        <div className='flex flex-col gap-6'>
+          <h1 className='text-2xl sm:text-3xl md:text-4xl text-left'>Availability Calendar</h1>
+          <p className='text-xl text-green'>Find the dates suited for your next holiday in the calendar below. Please call or send an email to book the cabin.</p>
+          <div className='flex gap-4'>
+            <LinkButton
+              icon={<CallOutlinedIcon />}
+              href='tel:+4791879843'
+              text='Call us'
+            />
+            <LinkButton
+              icon={<AlternateEmailOutlinedIcon />}
+              href='mailto:Ytreeideferiehus@gmail.com?subject=Ytreeide Feriehus booking&body=Hello, my name is __ and i would like to book ytreeide feriehus from __ to __.'
+              text='Send mail'
+              type='secondary'
+            />
+          </div>
+        </div>
+        <div className='flex justify-between flex-wrap gap-8'>
+          <Calendar />
         </div>
       </section>
     </main>

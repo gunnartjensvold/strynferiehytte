@@ -1,11 +1,12 @@
 type Props = {
   text?: string
+  srText?: string
   icon?: React.ReactNode
   type?: 'primary' | 'secondary'
   onClick?: () => void
 }
 
-export default function Button({ text, icon, type = 'primary', onClick }: Props) {
+export default function Button({ text, srText, icon, type = 'primary', onClick }: Props) {
   return (
     <button
       onClick={onClick}
@@ -13,6 +14,7 @@ export default function Button({ text, icon, type = 'primary', onClick }: Props)
     >
       {icon && icon}
       {text}
+      <span className='sr-only'>{srText}</span>
     </button>
   )
 }

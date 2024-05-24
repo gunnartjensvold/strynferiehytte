@@ -44,9 +44,9 @@ export default function Navbar() {
         </Link>
         <Link
           className='hover:text-primary'
-          href={'/'}
+          href={'/#availability'}
         >
-          Home
+          Availability
         </Link>
         <Link
           className='hover:text-primary'

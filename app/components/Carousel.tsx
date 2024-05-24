@@ -2,7 +2,6 @@
 
 import useEmblaCarousel from 'embla-carousel-react'
 import { useCallback } from 'react'
-import Image from 'next/image'
 import Button from './Button'
 import ArrowBackIosOutlinedIcon from '@mui/icons-material/ArrowBackIosOutlined'
 import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined'
@@ -55,15 +54,17 @@ export function EmblaCarousel() {
       <div className='flex pt-4 pb-1 px-1 justify-between items-center text-xl'>
         <div className='flex gap-2'>
           <Button
+            srText='Previous image'
             type='secondary'
             onClick={scrollPrev}
-            icon={<ArrowBackIosOutlinedIcon fontSize='inherit' />}
+            icon={<ArrowBackIosOutlinedIcon />}
           />
 
           <Button
+            srText='Next image'
             type='secondary'
             onClick={scrollNext}
-            icon={<ArrowForwardIosOutlinedIcon fontSize='inherit' />}
+            icon={<ArrowForwardIosOutlinedIcon />}
           />
         </div>
 
