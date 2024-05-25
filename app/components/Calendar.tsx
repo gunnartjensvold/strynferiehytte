@@ -21,6 +21,7 @@ export function Calendar() {
           throw new Error('Failed to fetch events')
         }
         const data = await response.json()
+        console.log(data)
         setEvents(data)
       } catch (err) {
         console.error('Error fetching events:', err)
