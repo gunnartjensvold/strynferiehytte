@@ -1,5 +1,4 @@
 // Components
-import Button from './components/Button'
 import DesktopAndMobileImage from './components/DesktopAndMobileImage'
 import ExperienceCard from './components/ExperienceCard'
 import LinkButton from './components/LinkButton'
@@ -22,6 +21,10 @@ import FenceOutlinedIcon from '@mui/icons-material/FenceOutlined'
 import WifiOutlinedIcon from '@mui/icons-material/WifiOutlined'
 import AlternateEmailOutlinedIcon from '@mui/icons-material/AlternateEmailOutlined'
 import { Calendar } from './components/Calendar'
+import PriceCard from './components/PriceCard'
+import CabinOutlinedIcon from '@mui/icons-material/CabinOutlined'
+import CleaningServicesOutlinedIcon from '@mui/icons-material/CleaningServicesOutlined'
+import BedOutlinedIcon from '@mui/icons-material/BedOutlined'
 
 export default function Home() {
   return (
@@ -186,6 +189,36 @@ export default function Home() {
           <Calendar />
         </div>
       </section>
+
+      {/* Prices */}
+      <section
+        id='experiences'
+        className='flex flex-col items-center justify-center gap-12 px-4 sm:px-8'
+      >
+        <h1 className='text-2xl sm:text-3xl md:text-4xl text-center'>Prices</h1>
+        <div className='w-full grid grid-rows-3 lg:grid-rows-1 lg:grid-cols-3 gap-8'>
+          <PriceCard
+            title='Cabin rental'
+            icon={<CabinOutlinedIcon fontSize='inherit' />}
+            price='1400,- NOK'
+            description='The cost of renting the cabin one night.'
+          />
+          <PriceCard
+            title='Final cleaning'
+            icon={<CleaningServicesOutlinedIcon fontSize='inherit' />}
+            price='500,- NOK'
+            description='If you need us to clean the cabin after your stay.'
+          />
+          <PriceCard
+            title='Fresh sheets'
+            icon={<BedOutlinedIcon fontSize='inherit' />}
+            price='120,- NOK'
+            description="We'll provide you with fresh sheets at the beginning of your stay."
+          />
+        </div>
+      </section>
+
+      <div className='py-8'></div>
     </main>
   )
 }
