@@ -137,7 +137,7 @@ export default function Home() {
           <h1 className='text-2xl sm:text-3xl md:text-4xl text-left'>The cabin</h1>
           <ul className='text-xl flex flex-col gap-6 break-words text-green'>
             <li>The cabin acommodates up to 7 people</li>
-            <li>It is located in Stryn, a peaceful town in western Norway</li>
+            <li>It is located in Stryn, a peaceful town in western Norway, address: strynevegen 253</li>
             <li>There are many nearby mountain trails and tourist attractions, such as Loen Skylift and Geiranger</li>
             <li>
               <p>The cabin is equipped with everything you need</p>
