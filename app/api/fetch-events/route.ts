@@ -1,7 +1,6 @@
-// app/api/fetch-events/route.ts
 import { google } from 'googleapis'
 import { NextResponse } from 'next/server'
-import { cleanEvents } from '../../utils/dates'
+import { cleanEvents } from '@/app/utils/dates'
 
 export type date = string
 
@@ -27,9 +26,20 @@ export async function GET(): Promise<NextResponse> {
 
     const dates = events ? cleanEvents(events) : []
 
-    return NextResponse.json(dates)
+    return new NextResponse(JSON.stringify(dates), {
+      headers: {
+        'Cache-Control': 'no-cache', // Opt out of caching
+        'Content-Type': 'application/json'
+      }
+    })
   } catch (error) {
     console.error('Error fetching calendar events:', error)
-    return NextResponse.json({ error: 'Error fetching calendar events' }, { status: 500 })
+    return new NextResponse(JSON.stringify({ error: 'Error fetching calendar events' }), {
+      status: 500,
+      headers: {
+        'Cache-Control': 'no-cache', // Opt out of caching
+        'Content-Type': 'application/json'
+      }
+    })
   }
 }
