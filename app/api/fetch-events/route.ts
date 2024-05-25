@@ -2,9 +2,11 @@ import { google } from 'googleapis'
 import { NextResponse } from 'next/server'
 import { cleanEvents } from '@/app/utils/dates'
 
+export const dynamic = 'force-dynamic'
+
 export type date = string
 
-export async function GET(): Promise<NextResponse> {
+export async function GET(request: Request): Promise<NextResponse<date[] | { error: string }>> {
   try {
     // Load service account credentials
     const credentials = JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT_KEY!)
@@ -26,20 +28,9 @@ export async function GET(): Promise<NextResponse> {
 
     const dates = events ? cleanEvents(events) : []
 
-    return new NextResponse(JSON.stringify(dates), {
-      headers: {
-        'Cache-Control': 'no-cache', // Opt out of caching
-        'Content-Type': 'application/json'
-      }
-    })
+    return NextResponse.json(dates)
   } catch (error) {
-    console.error('Error fetching calendar events:', error)
-    return new NextResponse(JSON.stringify({ error: 'Error fetching calendar events' }), {
-      status: 500,
-      headers: {
-        'Cache-Control': 'no-cache', // Opt out of caching
-        'Content-Type': 'application/json'
-      }
-    })
+    console.log(error)
+    return NextResponse.json({ error: 'Failed to fetch events from server' }, { status: 500 })
   }
 }

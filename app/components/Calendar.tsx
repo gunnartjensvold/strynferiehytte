@@ -3,36 +3,25 @@
 import Button from './Button'
 import ArrowBackIosOutlinedIcon from '@mui/icons-material/ArrowBackIosOutlined'
 import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined'
-import { useEffect, useState } from 'react'
-import { date } from '../api/fetch-events/route'
+import { useState } from 'react'
+import { date } from '@/app/api/fetch-events/route'
+import useSWR from 'swr'
+
+const fetchEvents = (): Promise<date[]> => fetch('/api/fetch-events').then((res) => res.json())
+
+function useEvents() {
+  const { data, error, isLoading } = useSWR('/api/fetch-events', fetchEvents)
+
+  return { events: data, error, isLoading }
+}
 
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+
 export function Calendar() {
   const today = new Date()
   const [currentDate, setCurrentDate] = useState(new Date(today.getFullYear(), today.getMonth(), 1))
-  const [events, setEvents] = useState<date[]>([])
-  const [loading, setLoading] = useState(true)
 
-  useEffect(() => {
-    const fetchEvents = async () => {
-      try {
-        const response = await fetch('/api/fetch-events', { cache: 'no-store' })
-        if (!response.ok) {
-          throw new Error('Failed to fetch events')
-        }
-        const data = await response.json()
-        console.log(data)
-        setEvents(data)
-      } catch (err) {
-        console.error('Error fetching events:', err)
-        // setError(err.message);
-      } finally {
-        setLoading(false)
-      }
-    }
-
-    fetchEvents()
-  }, [])
+  const { events, error, isLoading } = useEvents()
 
   const nextMonth = () => {
     setCurrentDate(new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 1))
@@ -58,7 +47,7 @@ export function Calendar() {
     const days = []
 
     const disabledDates = new Set<date>()
-    events.forEach((event) => {
+    events?.forEach((event) => {
       disabledDates.add(event)
     })
 
@@ -125,39 +114,14 @@ export function Calendar() {
     return days
   }
 
-  function createLoader() {
-    return (
-      <span>
-        <svg
-          className='animate-spin -ml-1 mr-3 h-7 w-7'
-          xmlns='http://www.w3.org/2000/svg'
-          fill='none'
-          viewBox='0 0 24 24'
-        >
-          <circle
-            className='opacity-25'
-            cx='12'
-            cy='12'
-            r='10'
-            stroke='currentColor'
-            strokeWidth='4'
-          ></circle>
-          <path
-            className='opacity-75'
-            fill='currentColor'
-            d='M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z'
-          ></path>
-        </svg>
-      </span>
-    )
-  }
+  if (error) return <p>An error occurred: {error}</p>
 
   return (
     <div className='flex flex-col gap-6 md:gap-14 w-full'>
       <div className='flex justify-between items-center'>
         <h1 className='text-xl xs:text-2xl sm:text-4xl font-bold text-green'>{months[currentDate.getMonth()] + ' ' + currentDate.getFullYear()}</h1>
         <div className='flex gap-2 items-center'>
-          {loading && createLoader()}
+          {isLoading && loader()}
           <Button
             srText='Previous month'
             type='secondary'
@@ -184,4 +148,31 @@ function formatDate(year: number, month: number, day: number) {
   const paddedDay = String(day).padStart(2, '0') // Pad with leading zero if necessary
   // Return the formatted date string in 'YYYY-MM-DD' format
   return `${year}-${paddedMonth}-${paddedDay}`
+}
+
+function loader() {
+  return (
+    <span>
+      <svg
+        className='animate-spin -ml-1 mr-3 h-7 w-7'
+        xmlns='http://www.w3.org/2000/svg'
+        fill='none'
+        viewBox='0 0 24 24'
+      >
+        <circle
+          className='opacity-25'
+          cx='12'
+          cy='12'
+          r='10'
+          stroke='currentColor'
+          strokeWidth='4'
+        ></circle>
+        <path
+          className='opacity-75'
+          fill='currentColor'
+          d='M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z'
+        ></path>
+      </svg>
+    </span>
+  )
 }
