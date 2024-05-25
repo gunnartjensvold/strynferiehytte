@@ -50,9 +50,9 @@ export default function Navbar() {
         </Link>
         <Link
           className='hover:text-primary'
-          href={'/'}
+          href={'/#prices'}
         >
-          Home
+          Prices
         </Link>
       </div>
 

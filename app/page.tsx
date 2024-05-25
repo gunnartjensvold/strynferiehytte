@@ -192,7 +192,7 @@ export default function Home() {
 
       {/* Prices */}
       <section
-        id='experiences'
+        id='prices'
         className='flex flex-col items-center justify-center gap-12 px-4 sm:px-8'
       >
         <h1 className='text-2xl sm:text-3xl md:text-4xl text-center'>Prices</h1>
