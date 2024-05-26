@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Stryn Ferie Hytte',
-  description: 'Stryn Ferie Hytte - The best cabin in western Norway'
+  description: 'Stryn Ferie Hytte - Book your next vacation at a beautiful cabin in Stryn, surrounded by beautiful Norwegian nature.'
 }
 
 export default function RootLayout({
