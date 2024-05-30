@@ -1,14 +1,17 @@
-import { Inter } from 'next/font/google'
-import './globals.css'
-import type { Metadata } from 'next'
-import Navbar from './components/Navbar'
+import '@/app/globals.css'
+import Navbar from '@/app/components/Navbar'
 import { GoogleAnalytics } from '@next/third-parties/google'
+import { Inter } from 'next/font/google'
+import type { Metadata } from 'next'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Stryn Ferie Hytte',
-  description: 'Stryn Ferie Hytte - Book your next vacation at a beautiful cabin in Stryn, surrounded by beautiful Norwegian nature.'
+  description: 'Stryn Ferie Hytte - Book your next vacation at a beautiful cabin in Stryn, surrounded by beautiful Norwegian nature.',
+  verification: {
+    google: 'W9kXDo2eosdiX2mg31jsNGBFNZZebdFua5yjWWl-Wg8'
+  }
 }
 
 export default function RootLayout({
