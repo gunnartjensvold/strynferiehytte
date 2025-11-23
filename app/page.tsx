@@ -200,13 +200,13 @@ export default function Home() {
           <PriceCard
             title='Cabin rental'
             icon={<CabinOutlinedIcon fontSize='inherit' />}
-            price='1400,- NOK'
+            price='1500,- NOK'
             description='The cost of renting the cabin one night.'
           />
           <PriceCard
             title='Final cleaning'
             icon={<CleaningServicesOutlinedIcon fontSize='inherit' />}
-            price='600,- NOK'
+            price='700,- NOK'
             description='If you need us to clean the cabin after your stay.'
           />
           <PriceCard
