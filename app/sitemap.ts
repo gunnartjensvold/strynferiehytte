@@ -2,5 +2,15 @@ import type { MetadataRoute } from 'next'
 import { siteUrl } from '@/app/utils/site'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [{ url: `${siteUrl}/` }]
+  const alternates = {
+    languages: {
+      en: `${siteUrl}/`,
+      nb: `${siteUrl}/no`
+    }
+  }
+
+  return [
+    { url: `${siteUrl}/`, alternates },
+    { url: `${siteUrl}/no`, alternates }
+  ]
 }
