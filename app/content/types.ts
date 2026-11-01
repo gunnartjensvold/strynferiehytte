@@ -63,7 +63,7 @@ export type Content = {
   nearby: {
     title: string
     intro: string
-    places: { name: string; driveTime: string; text: string }[]
+    places: { name: string; driveTime: string; text: string; link: string }[]
   }
   cabin: {
     title: string

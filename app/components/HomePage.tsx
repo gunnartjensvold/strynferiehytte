@@ -157,7 +157,10 @@ export default function HomePage({ content }: { content: Content }) {
         <ul className='grid sm:grid-cols-2 lg:grid-cols-3 gap-8'>
           {nearby.places.map((place) => (
             <li key={place.name}>
-              <PlaceCard {...place} />
+              <PlaceCard
+                {...place}
+                readMore={experiences.readMore}
+              />
             </li>
           ))}
         </ul>

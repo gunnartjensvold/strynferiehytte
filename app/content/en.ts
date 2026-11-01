@@ -56,23 +56,41 @@ export const en: Content = {
     title: 'Things to do in Stryn',
     intro: 'Stryn lies at the inner end of the Nordfjord, between fjords, glaciers and mountains. Driving times from the cabin:',
     places: [
-      { name: 'Stryn town centre', driveTime: '5 minutes', text: 'Shops, cafés and grocery stores.' },
+      {
+        name: 'Stryn town centre',
+        driveTime: '5 minutes',
+        text: 'Shops, cafés and grocery stores.',
+        link: 'https://www.nordfjord.no/en/stryn'
+      },
       {
         name: 'Loen Skylift',
         driveTime: '15 minutes',
-        text: 'Cable car from the fjord in Loen to the top of Mount Hoven, 1,011 metres above sea level.'
+        text: 'Cable car from the fjord in Loen to the top of Mount Hoven, 1,011 metres above sea level.',
+        link: 'https://en.loenskylift.no/'
       },
-      { name: 'Olden', driveTime: '25 minutes', text: 'Village by the fjord, and the way into Oldedalen and Briksdalsbreen.' },
+      {
+        name: 'Olden',
+        driveTime: '25 minutes',
+        text: 'Village by the fjord, and the way into Oldedalen and Briksdalsbreen.',
+        link: 'https://www.nordfjord.no/en/olden-and-oldedalen'
+      },
       {
         name: 'Gamle Strynefjellsvegen',
         driveTime: '40 minutes',
-        text: "A narrow old mountain road over Strynefjellet and one of Norway's National Tourist Routes, open in summer."
+        text: "A narrow old mountain road over Strynefjellet and one of Norway's National Tourist Routes, open in summer.",
+        link: 'https://www.nasjonaleturistveger.no/en/routes/gamle-strynefjellsvegen/'
       },
-      { name: 'Stryn Sommerski', driveTime: '45 minutes', text: 'Summer ski centre on Strynefjellet, with skiing and snowboarding in early summer.' },
+      {
+        name: 'Stryn Sommerski',
+        driveTime: '45 minutes',
+        text: 'Summer ski centre on Strynefjellet, with skiing and snowboarding in early summer.',
+        link: 'https://www.nordfjord.no/en/stryn-summer-ski'
+      },
       {
         name: 'Briksdalsbreen',
         driveTime: '50 minutes',
-        text: "An arm of Jostedalsbreen, mainland Europe's largest glacier. From Briksdal you walk up to the glacier."
+        text: "An arm of Jostedalsbreen, mainland Europe's largest glacier. From Briksdal you walk up to the glacier.",
+        link: 'https://www.nordfjord.no/en/hiking-briksdalsbreen-glacier'
       }
     ]
   },
@@ -82,7 +100,6 @@ export const en: Content = {
       'The cabin has 3 bedrooms and room for up to 7 guests',
       'It is located in Stryn, a peaceful town in western Norway, address: Strynevegen 253',
       'Free parking at the cabin',
-      'The cabin is rented out during the summer season',
       'There are many nearby mountain trails and tourist attractions, such as Loen Skylift and Geiranger'
     ],
     equipped:
