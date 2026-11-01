@@ -36,17 +36,20 @@ export const en: Content = {
     skuten: {
       subtitle: 'Nearby hiking trail',
       imageAlt: 'View of Skuten in Norway, a popular hiking trail close to the cabin',
-      text: 'Skuten is one of many hiking trails in the area. The trip takes around 30 to 60 minutes.'
+      text: 'Skuten is one of many hiking trails in the area. The trip takes around 30 to 60 minutes.',
+      link: 'https://www.nordfjord.no/en/skuten'
     },
     geiranger: {
       subtitle: '2 hour drive',
       imageAlt: 'View of Geiranger in Norway, a popular tourist destination a 2 hour drive from the cabin',
-      text: 'The beautiful views of Geiranger can be experienced through a 2 hour drive.'
+      text: 'The beautiful views of Geiranger can be experienced through a 2 hour drive.',
+      link: 'https://www.visitnorway.no/reisemal/vestlandet/geirangerfjorden/'
     },
     lodalen: {
       subtitle: '1 hour drive',
       imageAlt: 'View of the glaciers in Lodalen, a popular tourist attraction close to the cabin',
-      text: "Lodalen is one of the world's most popular tourist attractions."
+      text: "Lodalen is one of the world's most popular tourist attractions.",
+      link: 'https://www.nordfjord.no/lodalen'
     }
   },
   cabin: {
