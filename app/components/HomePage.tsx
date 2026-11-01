@@ -5,6 +5,7 @@ import LinkButton from './LinkButton'
 import { EmblaCarousel } from './Carousel'
 import { Calendar } from './Calendar'
 import PriceCard from './PriceCard'
+import PlaceCard from './PlaceCard'
 
 // Icons
 import CallOutlinedIcon from '@mui/icons-material/CallOutlined'
@@ -32,7 +33,7 @@ import { contact, pricesNok, vacationRentalJsonLd } from '@/app/utils/site'
 const experienceImageSizes = '(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw'
 
 export default function HomePage({ content }: { content: Content }) {
-  const { hero, experiences, cabin, availability, prices } = content
+  const { hero, experiences, nearby, cabin, availability, prices } = content
   const mailHref = `mailto:${contact.email}?subject=${encodeURIComponent(availability.mailSubject)}&body=${encodeURIComponent(availability.mailBody)}`
 
   return (
@@ -142,6 +143,27 @@ export default function HomePage({ content }: { content: Content }) {
             }}
           />
         </div>
+      </section>
+
+      {/* Nearby */}
+      <section
+        id='nearby'
+        className='flex flex-col gap-12 px-4 sm:px-8'
+      >
+        <div className='flex flex-col gap-6'>
+          <h2 className='text-2xl sm:text-3xl md:text-4xl text-left'>{nearby.title}</h2>
+          <p className='text-xl text-green'>{nearby.intro}</p>
+        </div>
+        <ul className='grid sm:grid-cols-2 lg:grid-cols-3 gap-8'>
+          {nearby.places.map((place) => (
+            <li key={place.name}>
+              <PlaceCard
+                {...place}
+                readMore={experiences.readMore}
+              />
+            </li>
+          ))}
+        </ul>
       </section>
 
       {/* Cabin */}

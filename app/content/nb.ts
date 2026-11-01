@@ -40,26 +40,69 @@ export const nb: Content = {
       link: 'https://www.nordfjord.no/skuten'
     },
     geiranger: {
-      subtitle: '2 timer med bil',
-      imageAlt: 'Utsikt over Geiranger, et populært reisemål 2 timer med bil fra hytta',
-      text: 'Den vakre utsikten i Geiranger er bare 2 timer unna med bil.',
+      subtitle: '1,5 timer med bil',
+      imageAlt: 'Utsikt over Geiranger, et populært reisemål 1,5 timer med bil fra hytta',
+      text: 'Den vakre utsikten i Geiranger er bare halvannen time unna med bil.',
       link: 'https://www.visitnorway.no/reisemal/vestlandet/geirangerfjorden/'
     },
     lodalen: {
-      subtitle: '1 time med bil',
+      subtitle: '45 minutter med bil',
       imageAlt: 'Breene i Lodalen, en populær turistattraksjon i nærheten av hytta',
       text: 'Lodalen er en av de mest populære turistattraksjonene i verden.',
       link: 'https://www.nordfjord.no/lodalen'
     }
   },
+  nearby: {
+    title: 'Opplevelser i Stryn',
+    intro: 'Stryn ligger innerst i Nordfjord, mellom fjord, isbreer og fjell. Kjøretid fra hytta:',
+    places: [
+      {
+        name: 'Stryn sentrum',
+        driveTime: '5 minutter',
+        text: 'Butikker, kafeer og dagligvarebutikker.',
+        link: 'https://www.nordfjord.no/stryn'
+      },
+      {
+        name: 'Loen Skylift',
+        driveTime: '15 minutter',
+        text: 'Taubane fra fjorden i Loen til toppen av Hoven, 1011 meter over havet.',
+        link: 'https://www.loenskylift.no/'
+      },
+      {
+        name: 'Olden',
+        driveTime: '25 minutter',
+        text: 'Bygd ved fjorden, og veien inn til Oldedalen og Briksdalsbreen.',
+        link: 'https://www.nordfjord.no/olden-stryn'
+      },
+      {
+        name: 'Gamle Strynefjellsvegen',
+        driveTime: '40 minutter',
+        text: 'Smal, gammel fjellvei over Strynefjellet og en av Nasjonale turistveger, åpen om sommeren.',
+        link: 'https://www.nasjonaleturistveger.no/no/turistvegene/gamle-strynefjellsvegen/'
+      },
+      {
+        name: 'Stryn Sommerski',
+        driveTime: '45 minutter',
+        text: 'Sommerskisenter på Strynefjellet, med ski og snowboard tidlig på sommeren.',
+        link: 'https://www.strynsommerski.com/'
+      },
+      {
+        name: 'Briksdalsbreen',
+        driveTime: '50 minutter',
+        text: 'En arm av Jostedalsbreen, den største isbreen på det europeiske fastlandet. Fra Briksdal går du opp til breen.',
+        link: 'https://www.nordfjord.no/fottur-til-briksdalsbreen'
+      }
+    ]
+  },
   cabin: {
     title: 'Hytta',
     facts: [
-      'Hytta har plass til opptil 7 personer',
+      'Hytta har 3 soverom og plass til opptil 7 personer',
       'Den ligger i Stryn, et fredelig sted på Vestlandet, adresse: Strynevegen 253',
+      'Gratis parkering ved hytta',
       'Det er mange turstier og turistattraksjoner i nærheten, som Loen Skylift og Geiranger'
     ],
-    equipped: 'Hytta har alt du trenger',
+    equipped: 'Hytta har alt du trenger, blant annet oppvaskmaskin, vaskemaskin, Wi-Fi, TV, peis og grill',
     carousel: {
       previous: 'Forrige bilde',
       next: 'Neste bilde',
