@@ -60,6 +60,11 @@ export type Content = {
     geiranger: Experience
     lodalen: Experience
   }
+  nearby: {
+    title: string
+    intro: string
+    places: { name: string; driveTime: string; text: string }[]
+  }
   cabin: {
     title: string
     facts: string[]
