@@ -40,13 +40,13 @@ export const nb: Content = {
       link: 'https://www.nordfjord.no/skuten'
     },
     geiranger: {
-      subtitle: '2 timer med bil',
-      imageAlt: 'Utsikt over Geiranger, et populært reisemål 2 timer med bil fra hytta',
-      text: 'Den vakre utsikten i Geiranger er bare 2 timer unna med bil.',
+      subtitle: '1,5 timer med bil',
+      imageAlt: 'Utsikt over Geiranger, et populært reisemål 1,5 timer med bil fra hytta',
+      text: 'Den vakre utsikten i Geiranger er bare halvannen time unna med bil.',
       link: 'https://www.visitnorway.no/reisemal/vestlandet/geirangerfjorden/'
     },
     lodalen: {
-      subtitle: '1 time med bil',
+      subtitle: '45 minutter med bil',
       imageAlt: 'Breene i Lodalen, en populær turistattraksjon i nærheten av hytta',
       text: 'Lodalen er en av de mest populære turistattraksjonene i verden.',
       link: 'https://www.nordfjord.no/lodalen'
