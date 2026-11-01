@@ -15,12 +15,12 @@ export default function Navbar() {
         <Image
           className=''
           src='/logo.svg'
-          alt='Next.js Logo'
+          alt='Stryn Feriehytte logo'
           width={60}
           height={47}
           priority
         />
-        <span className='font-semibold tracking-wide group-hover:text-primary'>Stryn Ferie Hytte</span>
+        <span className='font-semibold tracking-wide group-hover:text-primary'>Stryn Feriehytte</span>
       </Link>
 
       <div className='gap-8 font-semibold lg:flex hidden'>

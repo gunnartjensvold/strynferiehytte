@@ -7,8 +7,8 @@ import type { Metadata } from 'next'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Stryn Ferie Hytte',
-  description: 'Stryn Ferie Hytte - Book your next vacation at a beautiful cabin in Stryn, surrounded by beautiful Norwegian nature.',
+  title: 'Stryn Feriehytte',
+  description: 'Stryn Feriehytte - Book your next vacation at a beautiful cabin in Stryn, surrounded by beautiful Norwegian nature.',
   verification: {
     google: 'W9kXDo2eosdiX2mg31jsNGBFNZZebdFua5yjWWl-Wg8'
   }
