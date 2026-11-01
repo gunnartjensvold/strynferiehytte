@@ -4,7 +4,7 @@ import Script from 'next/script'
 import { Inter } from 'next/font/google'
 import type { Content } from '@/app/content/types'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'], preload: false })
 
 const gaId = 'G-NCS6E6KCD7'
 

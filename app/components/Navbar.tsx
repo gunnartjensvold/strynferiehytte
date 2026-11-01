@@ -5,7 +5,7 @@ import LinkButton from './LinkButton'
 import type { Content } from '@/app/content/types'
 import { contact } from '@/app/utils/site'
 
-const BaiJamjuree = Bai_Jamjuree({ subsets: ['latin'], weight: '600' })
+const BaiJamjuree = Bai_Jamjuree({ subsets: ['latin'], weight: '600', preload: false })
 
 export default function Navbar({ content }: { content: Content }) {
   const { nav, homePath } = content
