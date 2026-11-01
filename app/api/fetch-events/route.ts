@@ -1,4 +1,4 @@
-import { google } from 'googleapis'
+import { google, type calendar_v3 } from 'googleapis'
 import { NextResponse } from 'next/server'
 import { cleanEvents } from '@/app/utils/dates'
 
@@ -18,15 +18,22 @@ export async function GET(request: Request): Promise<NextResponse<date[] | { err
     })
     const calendar = google.calendar({ version: 'v3', auth })
 
-    const response = await calendar.events.list({
-      calendarId: 'ytreeide.feriehus@gmail.com',
-      singleEvents: true,
-      orderBy: 'startTime'
-    })
+    // Google returns the oldest events first, a page at a time, so read every page to get the newest bookings
+    const events: calendar_v3.Schema$Event[] = []
+    let pageToken: string | undefined
+    do {
+      const response = await calendar.events.list({
+        calendarId: 'ytreeide.feriehus@gmail.com',
+        singleEvents: true,
+        orderBy: 'startTime',
+        maxResults: 2500,
+        pageToken
+      })
+      events.push(...(response.data.items ?? []))
+      pageToken = response.data.nextPageToken ?? undefined
+    } while (pageToken)
 
-    const events = response.data.items
-
-    const dates = events ? cleanEvents(events) : []
+    const dates = cleanEvents(events)
 
     return NextResponse.json(dates)
   } catch (error) {
