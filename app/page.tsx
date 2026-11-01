@@ -179,7 +179,7 @@ export default function Home() {
             />
             <LinkButton
               icon={<AlternateEmailOutlinedIcon />}
-              href='mailto:Ytreeideferiehus@gmail.com?subject=Ytreeide Feriehus booking&body=Hello, my name is __ and i would like to book ytreeide feriehus from __ to __.'
+              href='mailto:Ytreeideferiehus@gmail.com?subject=Stryn Feriehytte booking&body=Hello, my name is __ and I would like to book Stryn Feriehytte from __ to __.'
               text='Send mail'
               type='secondary'
             />
