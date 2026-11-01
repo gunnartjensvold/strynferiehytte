@@ -1,12 +1,9 @@
 import { getImageProps, type ImageLoader } from 'next/image'
 
-// Netlify's Image CDN serves WebP for /_next/image even when the browser accepts AVIF, so on
-// Netlify the AVIF versions are requested from the CDN directly. AVIF at q=40 is less than half the
-// size of WebP at q=75 and looks the same. It only exists on Netlify, so local builds skip it.
-const avifLoader: ImageLoader | undefined =
-  process.env.NETLIFY === 'true'
-    ? ({ src, width }) => `/.netlify/images?url=${encodeURIComponent(src)}&w=${width}&q=40&fm=avif`
-    : undefined
+// The AVIF versions are static files that scripts/generate-avif.mjs writes before each build, because
+// Netlify's Image CDN serves WebP even when the browser accepts AVIF, and answers about half a second
+// slower than a static file. The paths must match the ones that script writes.
+const avifLoader: ImageLoader = ({ src, width }) => `/generated${src.replace(/\.\w+$/, `-${width}.avif`)}`
 
 type Props = {
   shared: {
@@ -40,23 +37,19 @@ export default function DesktopAndMobileImage({ shared, desktopImage, mobileImag
   return (
     <div className='relative'>
       <picture>
-        {avifLoader && (
-          <source
-            media={desktopMedia}
-            type='image/avif'
-            srcSet={srcSet(desktopImage, avifLoader)}
-          />
-        )}
+        <source
+          media={desktopMedia}
+          type='image/avif'
+          srcSet={srcSet(desktopImage, avifLoader)}
+        />
         <source
           media={desktopMedia}
           srcSet={srcSet(desktopImage)}
         />
-        {avifLoader && (
-          <source
-            type='image/avif'
-            srcSet={srcSet(mobileImage, avifLoader)}
-          />
-        )}
+        <source
+          type='image/avif'
+          srcSet={srcSet(mobileImage, avifLoader)}
+        />
         <source srcSet={mobile} />
         <img
           {...rest}
