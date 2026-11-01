@@ -8,7 +8,12 @@ import type { date } from '@/app/api/fetch-events/route'
 import useSWR from 'swr'
 import type { CalendarLabels } from '@/app/content/types'
 
-const fetchEvents = (): Promise<date[]> => fetch('/api/fetch-events').then((res) => res.json())
+const fetchEvents = (): Promise<date[]> =>
+  fetch('/api/fetch-events').then((res) => {
+    // fetch only fails on network errors, so an error response has to be thrown here to show the error message
+    if (!res.ok) throw new Error(`Failed to fetch events: ${res.status}`)
+    return res.json()
+  })
 
 function useEvents() {
   const { data, error, isLoading } = useSWR('/api/fetch-events', fetchEvents)
@@ -146,11 +151,13 @@ export function Calendar({ labels }: { labels: CalendarLabels }) {
 }
 
 function formatDate(year: number, month: number, day: number) {
+  // Let Date roll month -1 and 12 over into the previous and next year, so the days shown from December and January match
+  const date = new Date(year, month, day)
   // Pad month and day with leading zeros if necessary
-  const paddedMonth = String(month + 1).padStart(2, '0') // Month starts from 0, so add 1 and pad with leading zero if necessary
-  const paddedDay = String(day).padStart(2, '0') // Pad with leading zero if necessary
+  const paddedMonth = String(date.getMonth() + 1).padStart(2, '0') // Month starts from 0, so add 1 and pad with leading zero if necessary
+  const paddedDay = String(date.getDate()).padStart(2, '0') // Pad with leading zero if necessary
   // Return the formatted date string in 'YYYY-MM-DD' format
-  return `${year}-${paddedMonth}-${paddedDay}`
+  return `${date.getFullYear()}-${paddedMonth}-${paddedDay}`
 }
 
 function loader() {
