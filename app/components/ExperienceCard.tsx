@@ -9,6 +9,7 @@ type Props = {
   image: ResponsiveImageProps
   footer: {
     text: string
+    readMore: string
     link: string
   }
 }
@@ -32,7 +33,7 @@ export default function ExperienceCard({ header, image, footer }: Props) {
       <div className='flex grow flex-col px-4 gap-1 justify-between text-green'>
         <p>{footer.text}</p>
         <p>
-          Read more about{' '}
+          {footer.readMore}{' '}
           <a
             className='font-bold underline underline-offset-4'
             href={footer.link}

@@ -7,8 +7,9 @@ import ArrowBackIosOutlinedIcon from '@mui/icons-material/ArrowBackIosOutlined'
 import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined'
 import { SelectedSnapDisplay, useSelectedSnapDisplay } from './CarouselSelectedSnapDisplay'
 import ResponsiveImage from './ResponsiveImage'
+import type { CarouselLabels } from '@/app/content/types'
 
-export function EmblaCarousel() {
+export function EmblaCarousel({ labels }: { labels: CarouselLabels }) {
   const [emblaRef, emblaApi] = useEmblaCarousel()
 
   const scrollPrev = useCallback(() => {
@@ -30,21 +31,21 @@ export function EmblaCarousel() {
         <div className='embla__container cursor-pointer'>
           <ResponsiveImage
             src='/images/desktop/hero.jpeg'
-            alt='Yellow wooden holiday cabin in Stryn with a garden, outdoor seating and green mountains behind'
+            alt={labels.imageAlts[0]}
             sizes='(min-width: 1280px) 50vw, 100vw'
             width={4032}
             height={3024}
           />
           <ResponsiveImage
             src='/images/desktop/1.jpeg'
-            alt="The cabin's yellow wooden walls and covered entrance, with forest behind"
+            alt={labels.imageAlts[1]}
             sizes=' (min-width: 1280px) 50vw, 100vw'
             width={4032}
             height={3024}
           />
           <ResponsiveImage
             src='/images/desktop/2.jpeg'
-            alt='The cabin and its gravel path on a sunny day, with the Stryn valley and mountains in the background'
+            alt={labels.imageAlts[2]}
             sizes=' (min-width: 1280px) 50vw, 100vw'
             width={4032}
             height={3024}
@@ -54,14 +55,14 @@ export function EmblaCarousel() {
       <div className='flex pt-4 pb-1 px-1 justify-between items-center text-xl'>
         <div className='flex gap-2'>
           <Button
-            srText='Previous image'
+            srText={labels.previous}
             type='secondary'
             onClick={scrollPrev}
             icon={<ArrowBackIosOutlinedIcon />}
           />
 
           <Button
-            srText='Next image'
+            srText={labels.next}
             type='secondary'
             onClick={scrollNext}
             icon={<ArrowForwardIosOutlinedIcon />}
