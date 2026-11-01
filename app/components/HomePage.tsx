@@ -8,24 +8,26 @@ import PriceCard from './PriceCard'
 import PlaceCard from './PlaceCard'
 
 // Icons
-import CallOutlinedIcon from '@mui/icons-material/CallOutlined'
-import HikingIcon from '@mui/icons-material/Hiking'
-import DirectionsCarOutlinedIcon from '@mui/icons-material/DirectionsCarOutlined'
-import LocalLaundryServiceOutlinedIcon from '@mui/icons-material/LocalLaundryServiceOutlined'
-import KitchenOutlinedIcon from '@mui/icons-material/KitchenOutlined'
-import CountertopsOutlinedIcon from '@mui/icons-material/CountertopsOutlined'
-import ShowerOutlinedIcon from '@mui/icons-material/ShowerOutlined'
-import OutdoorGrillOutlinedIcon from '@mui/icons-material/OutdoorGrillOutlined'
-import FireplaceOutlinedIcon from '@mui/icons-material/FireplaceOutlined'
-import TvOutlinedIcon from '@mui/icons-material/TvOutlined'
-import DeckOutlinedIcon from '@mui/icons-material/DeckOutlined'
-import NaturePeopleOutlinedIcon from '@mui/icons-material/NaturePeopleOutlined'
-import FenceOutlinedIcon from '@mui/icons-material/FenceOutlined'
-import WifiOutlinedIcon from '@mui/icons-material/WifiOutlined'
-import AlternateEmailOutlinedIcon from '@mui/icons-material/AlternateEmailOutlined'
-import CabinOutlinedIcon from '@mui/icons-material/CabinOutlined'
-import CleaningServicesOutlinedIcon from '@mui/icons-material/CleaningServicesOutlined'
-import BedOutlinedIcon from '@mui/icons-material/BedOutlined'
+import {
+  CallOutlinedIcon,
+  HikingIcon,
+  DirectionsCarOutlinedIcon,
+  LocalLaundryServiceOutlinedIcon,
+  KitchenOutlinedIcon,
+  CountertopsOutlinedIcon,
+  ShowerOutlinedIcon,
+  OutdoorGrillOutlinedIcon,
+  FireplaceOutlinedIcon,
+  TvOutlinedIcon,
+  DeckOutlinedIcon,
+  NaturePeopleOutlinedIcon,
+  FenceOutlinedIcon,
+  WifiOutlinedIcon,
+  AlternateEmailOutlinedIcon,
+  CabinOutlinedIcon,
+  CleaningServicesOutlinedIcon,
+  BedOutlinedIcon
+} from './icons'
 
 import type { Content } from '@/app/content/types'
 import { contact, pricesNok, vacationRentalJsonLd } from '@/app/utils/site'
