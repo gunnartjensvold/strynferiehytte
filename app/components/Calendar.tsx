@@ -72,7 +72,7 @@ export function Calendar({ labels }: { labels: CalendarLabels }) {
       days.push(
         <div
           key={`prev-${i}`}
-          className={className + bacgkroundColor + ' opacity-60'}
+          className={className + bacgkroundColor + ' opacity-65'}
         >
           {prevMonthLastDay - i + 1}.
         </div>
@@ -112,7 +112,7 @@ export function Calendar({ labels }: { labels: CalendarLabels }) {
       days.push(
         <div
           key={`next-${i}`}
-          className={className + bacgkroundColor + ' opacity-60'}
+          className={className + bacgkroundColor + ' opacity-65'}
         >
           {i}.
         </div>
