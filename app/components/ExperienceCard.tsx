@@ -20,7 +20,7 @@ export default function ExperienceCard({ header, image, footer }: Props) {
       <div className='flex gap-4 px-4'>
         <span className='text-6xl text-green'>{header.icon}</span>
         <div className='flex flex-col gap-1'>
-          <h2 className='text-2xl'>{header.title}</h2>
+          <h3 className='text-2xl'>{header.title}</h3>
           <p className='text-green'>{header.subtitle}</p>
         </div>
       </div>

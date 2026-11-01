@@ -30,21 +30,21 @@ export function EmblaCarousel() {
         <div className='embla__container cursor-pointer'>
           <ResponsiveImage
             src='/images/desktop/hero.jpeg'
-            alt='Cabin in the countryside'
+            alt='Yellow wooden holiday cabin in Stryn with a garden, outdoor seating and green mountains behind'
             sizes='(min-width: 1280px) 50vw, 100vw'
             width={4032}
             height={3024}
           />
           <ResponsiveImage
             src='/images/desktop/1.jpeg'
-            alt='Cabin in the countryside'
+            alt="The cabin's yellow wooden walls and covered entrance, with forest behind"
             sizes=' (min-width: 1280px) 50vw, 100vw'
             width={4032}
             height={3024}
           />
           <ResponsiveImage
             src='/images/desktop/2.jpeg'
-            alt='Cabin in the countryside'
+            alt='The cabin and its gravel path on a sunny day, with the Stryn valley and mountains in the background'
             sizes=' (min-width: 1280px) 50vw, 100vw'
             width={4032}
             height={3024}
