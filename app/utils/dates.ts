@@ -1,6 +1,7 @@
-import { calendar_v3 } from 'googleapis'
-import Schema$Event = calendar_v3.Schema$Event
-import { date } from '../api/fetch-events/route'
+import type { calendar_v3 } from 'googleapis'
+import type { date } from '../api/fetch-events/route'
+
+type Schema$Event = calendar_v3.Schema$Event
 
 export function cleanEvents(events: Schema$Event[]) {
   const dates: date[] = []
