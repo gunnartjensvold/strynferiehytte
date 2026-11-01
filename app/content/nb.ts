@@ -56,23 +56,41 @@ export const nb: Content = {
     title: 'Opplevelser i Stryn',
     intro: 'Stryn ligger innerst i Nordfjord, mellom fjord, isbreer og fjell. Kjøretid fra hytta:',
     places: [
-      { name: 'Stryn sentrum', driveTime: '5 minutter', text: 'Butikker, kafeer og dagligvarebutikker.' },
+      {
+        name: 'Stryn sentrum',
+        driveTime: '5 minutter',
+        text: 'Butikker, kafeer og dagligvarebutikker.',
+        link: 'https://www.nordfjord.no/stryn'
+      },
       {
         name: 'Loen Skylift',
         driveTime: '15 minutter',
-        text: 'Taubane fra fjorden i Loen til toppen av Hoven, 1011 meter over havet.'
+        text: 'Taubane fra fjorden i Loen til toppen av Hoven, 1011 meter over havet.',
+        link: 'https://www.loenskylift.no/'
       },
-      { name: 'Olden', driveTime: '25 minutter', text: 'Bygd ved fjorden, og veien inn til Oldedalen og Briksdalsbreen.' },
+      {
+        name: 'Olden',
+        driveTime: '25 minutter',
+        text: 'Bygd ved fjorden, og veien inn til Oldedalen og Briksdalsbreen.',
+        link: 'https://www.nordfjord.no/olden-stryn'
+      },
       {
         name: 'Gamle Strynefjellsvegen',
         driveTime: '40 minutter',
-        text: 'Smal, gammel fjellvei over Strynefjellet og en av Nasjonale turistveger, åpen om sommeren.'
+        text: 'Smal, gammel fjellvei over Strynefjellet og en av Nasjonale turistveger, åpen om sommeren.',
+        link: 'https://www.nasjonaleturistveger.no/no/turistvegene/gamle-strynefjellsvegen/'
       },
-      { name: 'Stryn Sommerski', driveTime: '45 minutter', text: 'Sommerskisenter på Strynefjellet, med ski og snowboard tidlig på sommeren.' },
+      {
+        name: 'Stryn Sommerski',
+        driveTime: '45 minutter',
+        text: 'Sommerskisenter på Strynefjellet, med ski og snowboard tidlig på sommeren.',
+        link: 'https://www.strynsommerski.com/'
+      },
       {
         name: 'Briksdalsbreen',
         driveTime: '50 minutter',
-        text: 'En arm av Jostedalsbreen, den største isbreen på det europeiske fastlandet. Fra Briksdal går du opp til breen.'
+        text: 'En arm av Jostedalsbreen, den største isbreen på det europeiske fastlandet. Fra Briksdal går du opp til breen.',
+        link: 'https://www.nordfjord.no/fottur-til-briksdalsbreen'
       }
     ]
   },
@@ -82,7 +100,6 @@ export const nb: Content = {
       'Hytta har 3 soverom og plass til opptil 7 personer',
       'Den ligger i Stryn, et fredelig sted på Vestlandet, adresse: Strynevegen 253',
       'Gratis parkering ved hytta',
-      'Hytta leies ut i sommersesongen',
       'Det er mange turstier og turistattraksjoner i nærheten, som Loen Skylift og Geiranger'
     ],
     equipped: 'Hytta har alt du trenger, blant annet oppvaskmaskin, vaskemaskin, Wi-Fi, TV, peis og grill',
