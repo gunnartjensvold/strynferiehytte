@@ -40,13 +40,13 @@ export const en: Content = {
       link: 'https://www.nordfjord.no/en/skuten'
     },
     geiranger: {
-      subtitle: '2 hour drive',
-      imageAlt: 'View of Geiranger in Norway, a popular tourist destination a 2 hour drive from the cabin',
-      text: 'The beautiful views of Geiranger can be experienced through a 2 hour drive.',
+      subtitle: '1.5 hour drive',
+      imageAlt: 'View of Geiranger in Norway, a popular tourist destination a 1.5 hour drive from the cabin',
+      text: 'The beautiful views of Geiranger can be experienced through a 1.5 hour drive.',
       link: 'https://www.visitnorway.no/reisemal/vestlandet/geirangerfjorden/'
     },
     lodalen: {
-      subtitle: '1 hour drive',
+      subtitle: '45 minute drive',
       imageAlt: 'View of the glaciers in Lodalen, a popular tourist attraction close to the cabin',
       text: "Lodalen is one of the world's most popular tourist attractions.",
       link: 'https://www.nordfjord.no/lodalen'
