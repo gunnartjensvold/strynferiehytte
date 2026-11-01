@@ -1,8 +1,7 @@
 'use client'
 
 import Button from './Button'
-import ArrowBackIosOutlinedIcon from '@mui/icons-material/ArrowBackIosOutlined'
-import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined'
+import { ArrowBackIosOutlinedIcon, ArrowForwardIosOutlinedIcon } from './icons'
 import { useEffect, useState } from 'react'
 import type { date } from '@/app/api/fetch-events/route'
 import useSWR from 'swr'
