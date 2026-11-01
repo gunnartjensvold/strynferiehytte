@@ -100,7 +100,7 @@ export default function HomePage({ content }: { content: Content }) {
             footer={{
               text: experiences.skuten.text,
               readMore: experiences.readMore,
-              link: 'https://ut.no/turforslag/116929377/skuten-pa-kirkeeide'
+              link: experiences.skuten.link
             }}
           />
           <ExperienceCard
@@ -119,7 +119,7 @@ export default function HomePage({ content }: { content: Content }) {
             footer={{
               text: experiences.geiranger.text,
               readMore: experiences.readMore,
-              link: 'https://www.visitnorway.no/reisemal/vestlandet/geirangerfjorden/'
+              link: experiences.geiranger.link
             }}
           />
           <ExperienceCard
@@ -138,7 +138,7 @@ export default function HomePage({ content }: { content: Content }) {
             footer={{
               text: experiences.lodalen.text,
               readMore: experiences.readMore,
-              link: 'https://www.nordfjord.no/lodalen'
+              link: experiences.lodalen.link
             }}
           />
         </div>

@@ -36,17 +36,20 @@ export const nb: Content = {
     skuten: {
       subtitle: 'Tursti i nærheten',
       imageAlt: 'Utsikt fra Skuten, en populær tursti i nærheten av hytta',
-      text: 'Skuten er en av mange turstier i området. Turen tar rundt 30 til 60 minutter.'
+      text: 'Skuten er en av mange turstier i området. Turen tar rundt 30 til 60 minutter.',
+      link: 'https://www.nordfjord.no/skuten'
     },
     geiranger: {
       subtitle: '2 timer med bil',
       imageAlt: 'Utsikt over Geiranger, et populært reisemål 2 timer med bil fra hytta',
-      text: 'Den vakre utsikten i Geiranger er bare 2 timer unna med bil.'
+      text: 'Den vakre utsikten i Geiranger er bare 2 timer unna med bil.',
+      link: 'https://www.visitnorway.no/reisemal/vestlandet/geirangerfjorden/'
     },
     lodalen: {
       subtitle: '1 time med bil',
       imageAlt: 'Breene i Lodalen, en populær turistattraksjon i nærheten av hytta',
-      text: 'Lodalen er en av de mest populære turistattraksjonene i verden.'
+      text: 'Lodalen er en av de mest populære turistattraksjonene i verden.',
+      link: 'https://www.nordfjord.no/lodalen'
     }
   },
   cabin: {

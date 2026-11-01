@@ -15,6 +15,8 @@ type Experience = {
   subtitle: string
   imageAlt: string
   text: string
+  // Page about the place, in the page's language where one exists
+  link: string
 }
 
 type PriceText = {
