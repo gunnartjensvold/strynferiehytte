@@ -7,9 +7,9 @@ export const nb: Content = {
   homePath: '/no',
   ogLocale: 'nb_NO',
   meta: {
-    title: 'Ferie i Stryn: hytte til leie | Stryn Feriehytte',
+    title: 'Hytteutleie i Stryn: hytte til leie for ferie | Stryn Feriehytte',
     description:
-      'Hytte til leie i Stryn for opptil 7 personer – perfekt for ferie på Vestlandet. Turstier rett ved, og Loen Skylift og Geiranger i nærheten. Bestill direkte.',
+      'Feriehus i Stryn for opptil 7 personer – perfekt for ferie på Vestlandet. Turstier rett ved, og Loen Skylift og Geiranger i nærheten. Bestill direkte.',
     shareTitle: 'Stryn Feriehytte – hytte til leie i Stryn',
     shareImageAlt: 'Gul trehytte i Stryn med hage og grønne fjell bak'
   },
