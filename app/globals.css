@@ -1,18 +1,29 @@
-@import url(./carousel.css);
+@import url(./carousel.css) layer(base);
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@theme {
+  --color-success: #7b9d85;
+  --color-brown: #201919;
+  --color-white: #fafafa;
+  --color-primary: #d9c452;
+  --color-background: #f2f2f2;
+  --color-secondary: #938c6c;
+  --color-green: #49504b;
+  --color-error: #9f6060;
+
+  --breakpoint-xs: 360px;
+}
 
 @layer base {
   html {
     @apply scroll-smooth;
     @apply bg-background;
   }
-}
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  /* Tailwind v4 no longer gives buttons a pointer cursor by default */
+  button:not(:disabled),
+  [role='button']:not(:disabled) {
+    cursor: pointer;
   }
 }
