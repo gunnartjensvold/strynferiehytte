@@ -26,9 +26,16 @@ import CabinOutlinedIcon from '@mui/icons-material/CabinOutlined'
 import CleaningServicesOutlinedIcon from '@mui/icons-material/CleaningServicesOutlined'
 import BedOutlinedIcon from '@mui/icons-material/BedOutlined'
 
+import { vacationRentalJsonLd } from './utils/site'
+
 export default function Home() {
   return (
     <main className='flex flex-col gap-24'>
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(vacationRentalJsonLd).replace(/</g, '\\u003c') }}
+      />
+
       {/* Hero */}
       <section
         id='hero'
@@ -38,15 +45,15 @@ export default function Home() {
           <div className='absolute inset-0 flex items-center overflow-hidden -z-10'>
             <div className='absolute inset-0 z-10 bg-black/50'></div>
             <DesktopAndMobileImage
-              shared={{ alt: 'Cabin in the countryside', sizes: '100vw', priority: true }}
+              shared={{ alt: 'Yellow wooden holiday cabin in Stryn with a garden, outdoor seating and green mountains behind', sizes: '100vw', priority: true }}
               desktopImage={{ src: '/images/desktop/hero.jpeg', breakPoint: 768, width: 4032, height: 3024 }}
               mobileImage={{ src: '/images/mobile/hero.jpeg', width: 3024, height: 4032 }}
             ></DesktopAndMobileImage>
           </div>
           <div className='px-8 flex flex-col gap-2 xs:gap-4 items-center justify-center text-center text-white'>
-            <h1 className='text-4xl xs:text-5xl  md:text-6xl'>Experience Norway</h1>
+            <h1 className='text-4xl xs:text-5xl  md:text-6xl'>Holiday cabin in Stryn, Norway</h1>
             <p className='xs:text-xl md:text-2xl text-balance'>
-              At an idyllic cabin surrounded by the most beautiful <br></br> nature Norway has to offer.
+              Experience the most beautiful <br></br> nature Norway has to offer.
             </p>
             <div className='flex gap-3'>
               <LinkButton
@@ -69,7 +76,7 @@ export default function Home() {
         id='experiences'
         className='flex flex-col items-center justify-center gap-12 px-4 sm:px-8'
       >
-        <h1 className='text-2xl sm:text-3xl md:text-4xl text-center'>Beautiful scenery at your doorstep</h1>
+        <h2 className='text-2xl sm:text-3xl md:text-4xl text-center'>Beautiful scenery at your doorstep</h2>
         <div className='w-full flex justify-between flex-wrap gap-8'>
           <ExperienceCard
             header={{
@@ -80,7 +87,7 @@ export default function Home() {
             image={{
               src: '/images/skuten.jpeg',
               alt: 'View of Skuten in Norway, a popular hiking trail close to the cabin',
-              sizes: '(min-width: 640px)33vw, (min-width: 768px) 50vw, 100vw',
+              sizes: '(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw',
               width: 3024,
               height: 4032
             }}
@@ -98,7 +105,7 @@ export default function Home() {
             image={{
               src: '/images/geiranger.jpeg',
               alt: 'View of Geiranger in Norway, a popular tourist destination a 2 hour drive from the cabin',
-              sizes: '(min-width: 640px)33vw, (min-width: 768px) 50vw, 100vw',
+              sizes: '(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw',
               width: 3024,
               height: 4032
             }}
@@ -116,7 +123,7 @@ export default function Home() {
             image={{
               src: '/images/lodalen.jpeg',
               alt: 'View of the glaciers in Lodalen, a popular tourist attraction close to the cabin',
-              sizes: '(min-width: 640px)33vw, (min-width: 768px) 50vw, 100vw',
+              sizes: '(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw',
               width: 3024,
               height: 4032
             }}
@@ -134,7 +141,7 @@ export default function Home() {
         className='flex flex-col xl:flex-row xl:items-center lg:gap-12 gap-8 px-4 sm:px-8'
       >
         <div className='flex flex-col gap-8 py-8 basis-1/3 grow shrink'>
-          <h1 className='text-2xl sm:text-3xl md:text-4xl text-left'>The cabin</h1>
+          <h2 className='text-2xl sm:text-3xl md:text-4xl text-left'>The cabin</h2>
           <ul className='text-xl flex flex-col gap-6 wrap-break-word text-green'>
             <li>The cabin accommodates up to 7 people</li>
             <li>It is located in Stryn, a peaceful town in western Norway, address: strynevegen 253</li>
@@ -169,7 +176,7 @@ export default function Home() {
         className='flex flex-col justify-center gap-12 px-4 sm:px-8'
       >
         <div className='flex flex-col gap-6'>
-          <h1 className='text-2xl sm:text-3xl md:text-4xl text-left'>Availability Calendar</h1>
+          <h2 className='text-2xl sm:text-3xl md:text-4xl text-left'>Availability Calendar</h2>
           <p className='text-xl text-green'>Find the dates suited for your next holiday in the calendar below. Please call or send an email to book the cabin.</p>
           <div className='flex gap-4'>
             <LinkButton
@@ -195,7 +202,7 @@ export default function Home() {
         id='prices'
         className='flex flex-col items-center justify-center gap-12 px-4 sm:px-8'
       >
-        <h1 className='text-2xl sm:text-3xl md:text-4xl text-center'>Prices</h1>
+        <h2 className='text-2xl sm:text-3xl md:text-4xl text-center'>Prices</h2>
         <div className='w-full grid grid-rows-3 lg:grid-rows-1 lg:grid-cols-3 gap-8'>
           <PriceCard
             title='Cabin rental'
