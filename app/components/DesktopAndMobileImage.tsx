@@ -35,9 +35,7 @@ export default function DesktopAndMobileImage({ shared, desktopImage, mobileImag
     props: { srcSet: mobile, ...rest }
   } = getImageProps({
     ...shared,
-    ...mobileImage,
-    // priority only turns off lazy loading here, so ask for high fetch priority explicitly
-    fetchPriority: shared.priority ? 'high' : undefined
+    ...mobileImage
   })
   return (
     <div className='relative'>
