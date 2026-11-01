@@ -53,6 +53,8 @@ export function vacationRentalJsonLd(content: Content) {
   return {
     '@context': 'https://schema.org',
     '@type': 'VacationRental',
+    // Google requires a stable ID for the property; it is the same on both language pages
+    identifier: 'stryn-feriehytte',
     name: siteName,
     description: content.meta.description,
     url: siteUrl + (content.homePath === '/' ? '/' : content.homePath),
@@ -73,7 +75,8 @@ export function vacationRentalJsonLd(content: Content) {
     },
     containsPlace: {
       '@type': 'Accommodation',
-      occupancy: { '@type': 'QuantitativeValue', maxValue: 7 },
+      additionalType: 'EntirePlace',
+      occupancy: { '@type': 'QuantitativeValue', value: 7 },
       numberOfBedrooms: 3,
       amenityFeature: ['Wi-Fi', 'Washing machine', 'Kitchen', 'Dishwasher', 'Shower', 'Fireplace', 'TV', 'Outdoor grill', 'Free parking'].map((name) => ({
         '@type': 'LocationFeatureSpecification',
