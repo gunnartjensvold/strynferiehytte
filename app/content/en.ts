@@ -97,7 +97,7 @@ export const en: Content = {
   cabin: {
     title: 'The cabin',
     facts: [
-      'The cabin has 3 bedrooms and room for up to 7 guests',
+      'The cabin has 3 bedrooms with 7 single beds, 1 bathroom and room for up to 7 guests',
       'It is located in Stryn, a peaceful town in western Norway, address: Strynevegen 253',
       'Free parking at the cabin',
       'There are many nearby mountain trails and tourist attractions, such as Loen Skylift and Geiranger'
