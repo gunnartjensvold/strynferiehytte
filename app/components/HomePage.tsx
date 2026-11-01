@@ -54,16 +54,7 @@ export default function HomePage({ content }: { content: Content }) {
             <DesktopAndMobileImage
               shared={{ alt: hero.imageAlt, sizes: '100vw', priority: true }}
               desktopImage={{ src: '/images/desktop/hero.jpeg', breakPoint: 768, width: 4032, height: 3024 }}
-              mobileImage={{
-                src: '/images/mobile/hero.jpeg',
-                width: 3024,
-                height: 4032,
-                // The photo scaled down to 6x8 pixels with sharp, as WebP
-                blurDataURL:
-                  'data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAAAQAgCdASoGAAgAAkA4JZgCdGuAAocbhUzAAOJvsC2mbgLx15+slBrezHQTweegprDv4sQyLSHf9jjdOAZ7AXMmZqEhvQAA',
-                blurWidth: 6,
-                blurHeight: 8
-              }}
+              mobileImage={{ src: '/images/mobile/hero.jpeg', width: 3024, height: 4032 }}
             ></DesktopAndMobileImage>
           </div>
           <div className='px-8 flex flex-col gap-2 xs:gap-4 items-center justify-center text-center text-white'>
