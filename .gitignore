@@ -39,3 +39,6 @@ next-env.d.ts
 
 # demo_events
 demo_events.ts
+
+# hero AVIF versions, written by scripts/generate-avif.mjs
+/public/generated/
