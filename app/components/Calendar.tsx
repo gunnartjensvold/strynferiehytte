@@ -3,7 +3,7 @@
 import Button from './Button'
 import ArrowBackIosOutlinedIcon from '@mui/icons-material/ArrowBackIosOutlined'
 import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import type { date } from '@/app/api/fetch-events/route'
 import useSWR from 'swr'
 
@@ -20,6 +20,10 @@ const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 
 export function Calendar() {
   const today = new Date()
   const [currentDate, setCurrentDate] = useState(new Date(today.getFullYear(), today.getMonth(), 1))
+
+  // The page is prerendered at build time, so wait for the browser before showing a month
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => setMounted(true), [])
 
   const { events, error, isLoading } = useEvents()
 
@@ -119,7 +123,7 @@ export function Calendar() {
   return (
     <div className='flex flex-col gap-6 md:gap-14 w-full'>
       <div className='flex justify-between items-center'>
-        <h1 className='text-xl xs:text-2xl sm:text-4xl font-bold text-green'>{months[currentDate.getMonth()] + ' ' + currentDate.getFullYear()}</h1>
+        <h3 className='text-xl xs:text-2xl sm:text-4xl font-bold text-green'>{mounted ? months[currentDate.getMonth()] + ' ' + currentDate.getFullYear() : ' '}</h3>
         <div className='flex gap-2 items-center'>
           {isLoading && loader()}
           <Button
@@ -137,7 +141,7 @@ export function Calendar() {
           />
         </div>
       </div>
-      <div className='grid grid-cols-7 gap-1 xs:gap-2 sm:gap-3 md:gap-4'>{generateDays()}</div>
+      <div className='grid grid-cols-7 gap-1 xs:gap-2 sm:gap-3 md:gap-4'>{mounted && generateDays()}</div>
     </div>
   )
 }

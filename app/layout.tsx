@@ -3,12 +3,37 @@ import Navbar from '@/app/components/Navbar'
 import { GoogleAnalytics } from '@next/third-parties/google'
 import { Inter } from 'next/font/google'
 import type { Metadata } from 'next'
+import { siteDescription, siteName, siteUrl } from '@/app/utils/site'
 
 const inter = Inter({ subsets: ['latin'] })
 
+const shareImage = {
+  url: '/images/og.jpg',
+  width: 1200,
+  height: 630,
+  alt: 'Yellow wooden holiday cabin in Stryn with a garden and green mountains behind'
+}
+
 export const metadata: Metadata = {
-  title: 'Stryn Feriehytte',
-  description: 'Stryn Feriehytte - Book your next vacation at a beautiful cabin in Stryn, surrounded by beautiful Norwegian nature.',
+  metadataBase: new URL(siteUrl),
+  title: `Holiday cabin for rent in Stryn, Norway | ${siteName}`,
+  description: siteDescription,
+  alternates: {
+    canonical: '/'
+  },
+  openGraph: {
+    type: 'website',
+    url: '/',
+    siteName,
+    title: `${siteName} – holiday cabin in Stryn, Norway`,
+    description: siteDescription,
+    locale: 'en_US',
+    images: [shareImage]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: [shareImage]
+  },
   verification: {
     google: 'W9kXDo2eosdiX2mg31jsNGBFNZZebdFua5yjWWl-Wg8'
   }
