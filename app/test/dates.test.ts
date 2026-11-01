@@ -21,6 +21,22 @@ describe('cleanEvents', () => {
     expect(new Set(dates)).toEqual(new Set(['2024-07-01', '2024-07-02', '2024-07-03', '2024-07-04', '2024-07-05']))
   })
 
+  test('blocks the days of a booking with start and end times, leaving the check-out day free', () => {
+    const event = { start: { dateTime: '2024-07-01T15:00:00+02:00' }, end: { dateTime: '2024-07-04T11:00:00+02:00' } }
+    expect(cleanEvents([event])).toEqual(['2024-07-01', '2024-07-02', '2024-07-03'])
+  })
+
+  test('blocks the day of a timed event that starts and ends on the same day', () => {
+    const event = { start: { dateTime: '2024-07-01T10:00:00+02:00' }, end: { dateTime: '2024-07-01T14:00:00+02:00' } }
+    expect(cleanEvents([event])).toEqual(['2024-07-01'])
+  })
+
+  test('reads timed events in Norwegian time', () => {
+    // 23:30 UTC on 1 July is 01:30 on 2 July in Norway
+    const event = { start: { dateTime: '2024-07-01T23:30:00Z' }, end: { dateTime: '2024-07-02T08:00:00Z' } }
+    expect(cleanEvents([event])).toEqual(['2024-07-02'])
+  })
+
   test('ignores events without dates', () => {
     expect(cleanEvents([{}, { start: { date: '2024-07-01' } }])).toEqual([])
   })

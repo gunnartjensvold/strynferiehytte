@@ -2,24 +2,44 @@ import type { calendar_v3 } from 'googleapis'
 import type { date } from '../api/fetch-events/route'
 
 type Schema$Event = calendar_v3.Schema$Event
+type Schema$EventDateTime = calendar_v3.Schema$EventDateTime
+
+// Bookings are made in Norwegian time, so timed events are turned into dates in that time zone
+const osloDateParts = new Intl.DateTimeFormat('en-US', {
+  timeZone: 'Europe/Oslo',
+  year: 'numeric',
+  month: '2-digit',
+  day: '2-digit'
+})
+
+function toDate(time: Schema$EventDateTime | undefined): date | undefined {
+  if (time?.date) {
+    return time.date
+  }
+
+  if (time?.dateTime) {
+    const parts = Object.fromEntries(osloDateParts.formatToParts(new Date(time.dateTime)).map((part) => [part.type, part.value]))
+    return `${parts.year}-${parts.month}-${parts.day}`
+  }
+
+  return undefined
+}
 
 export function cleanEvents(events: Schema$Event[]) {
   const dates: date[] = []
 
   events.forEach((event) => {
-    let dateStart = event.start?.date
-    let dateEnd = event.end?.date
-
-    if (event.start?.dateTime) {
-      dateStart = event.start.date?.slice(0, 6)
-    }
-
-    if (event.end?.dateTime) {
-      dateEnd = event.end.date?.slice(0, 6)
-    }
+    const dateStart = toDate(event.start)
+    const dateEnd = toDate(event.end)
 
     if (dateStart && dateEnd) {
-      getDatesBetween(dateStart, dateEnd, dates)
+      if (dateEnd > dateStart) {
+        // The end date is the check-out day, which is free for the next guest
+        getDatesBetween(dateStart, dateEnd, dates)
+      } else {
+        // A timed event that starts and ends on the same day still blocks that day
+        dates.push(dateStart)
+      }
     }
   })
 
