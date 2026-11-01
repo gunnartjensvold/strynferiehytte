@@ -6,6 +6,7 @@ import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutl
 import { useEffect, useState } from 'react'
 import type { date } from '@/app/api/fetch-events/route'
 import useSWR from 'swr'
+import type { CalendarLabels } from '@/app/content/types'
 
 const fetchEvents = (): Promise<date[]> => fetch('/api/fetch-events').then((res) => res.json())
 
@@ -15,9 +16,7 @@ function useEvents() {
   return { events: data, error, isLoading }
 }
 
-const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-
-export function Calendar() {
+export function Calendar({ labels }: { labels: CalendarLabels }) {
   const today = new Date()
   const [currentDate, setCurrentDate] = useState(new Date(today.getFullYear(), today.getMonth(), 1))
 
@@ -118,23 +117,23 @@ export function Calendar() {
     return days
   }
 
-  if (error) return <p>An error occurred: {error}</p>
+  if (error) return <p className='text-xl text-error'>{labels.error}</p>
 
   return (
     <div className='flex flex-col gap-6 md:gap-14 w-full'>
       <div className='flex justify-between items-center'>
-        <h3 className='text-xl xs:text-2xl sm:text-4xl font-bold text-green'>{mounted ? months[currentDate.getMonth()] + ' ' + currentDate.getFullYear() : ' '}</h3>
+        <h3 className='text-xl xs:text-2xl sm:text-4xl font-bold text-green'>{mounted ? labels.months[currentDate.getMonth()] + ' ' + currentDate.getFullYear() : ' '}</h3>
         <div className='flex gap-2 items-center'>
           {isLoading && loader()}
           <Button
-            srText='Previous month'
+            srText={labels.previousMonth}
             type='secondary'
             icon={<ArrowBackIosOutlinedIcon />}
             onClick={previousMonth}
           />
 
           <Button
-            srText='Next month'
+            srText={labels.nextMonth}
             type='secondary'
             icon={<ArrowForwardIosOutlinedIcon />}
             onClick={nextMonth}

@@ -1,8 +1,10 @@
 // Components
-import DesktopAndMobileImage from './components/DesktopAndMobileImage'
-import ExperienceCard from './components/ExperienceCard'
-import LinkButton from './components/LinkButton'
-import { EmblaCarousel } from './components/Carousel'
+import DesktopAndMobileImage from './DesktopAndMobileImage'
+import ExperienceCard from './ExperienceCard'
+import LinkButton from './LinkButton'
+import { EmblaCarousel } from './Carousel'
+import { Calendar } from './Calendar'
+import PriceCard from './PriceCard'
 
 // Icons
 import CallOutlinedIcon from '@mui/icons-material/CallOutlined'
@@ -20,20 +22,24 @@ import NaturePeopleOutlinedIcon from '@mui/icons-material/NaturePeopleOutlined'
 import FenceOutlinedIcon from '@mui/icons-material/FenceOutlined'
 import WifiOutlinedIcon from '@mui/icons-material/WifiOutlined'
 import AlternateEmailOutlinedIcon from '@mui/icons-material/AlternateEmailOutlined'
-import { Calendar } from './components/Calendar'
-import PriceCard from './components/PriceCard'
 import CabinOutlinedIcon from '@mui/icons-material/CabinOutlined'
 import CleaningServicesOutlinedIcon from '@mui/icons-material/CleaningServicesOutlined'
 import BedOutlinedIcon from '@mui/icons-material/BedOutlined'
 
-import { vacationRentalJsonLd } from './utils/site'
+import type { Content } from '@/app/content/types'
+import { contact, pricesNok, vacationRentalJsonLd } from '@/app/utils/site'
 
-export default function Home() {
+const experienceImageSizes = '(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw'
+
+export default function HomePage({ content }: { content: Content }) {
+  const { hero, experiences, cabin, availability, prices } = content
+  const mailHref = `mailto:${contact.email}?subject=${encodeURIComponent(availability.mailSubject)}&body=${encodeURIComponent(availability.mailBody)}`
+
   return (
     <main className='flex flex-col gap-24'>
       <script
         type='application/ld+json'
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(vacationRentalJsonLd).replace(/</g, '\\u003c') }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(vacationRentalJsonLd(content)).replace(/</g, '\\u003c') }}
       />
 
       {/* Hero */}
@@ -45,26 +51,26 @@ export default function Home() {
           <div className='absolute inset-0 flex items-center overflow-hidden -z-10'>
             <div className='absolute inset-0 z-10 bg-black/50'></div>
             <DesktopAndMobileImage
-              shared={{ alt: 'Yellow wooden holiday cabin in Stryn with a garden, outdoor seating and green mountains behind', sizes: '100vw', priority: true }}
+              shared={{ alt: hero.imageAlt, sizes: '100vw', priority: true }}
               desktopImage={{ src: '/images/desktop/hero.jpeg', breakPoint: 768, width: 4032, height: 3024 }}
               mobileImage={{ src: '/images/mobile/hero.jpeg', width: 3024, height: 4032 }}
             ></DesktopAndMobileImage>
           </div>
           <div className='px-8 flex flex-col gap-2 xs:gap-4 items-center justify-center text-center text-white'>
-            <h1 className='text-4xl xs:text-5xl  md:text-6xl'>Holiday cabin in Stryn, Norway</h1>
+            <h1 className='text-4xl xs:text-5xl  md:text-6xl'>{hero.title}</h1>
             <p className='xs:text-xl md:text-2xl text-balance'>
-              Experience the most beautiful <br></br> nature Norway has to offer.
+              {hero.subtitleStart} <br></br> {hero.subtitleEnd}
             </p>
             <div className='flex gap-3'>
               <LinkButton
-                text='Call us'
-                href='tel:+47 918 79 843'
+                text={content.nav.callUs}
+                href={contact.phoneHref}
                 icon={<CallOutlinedIcon />}
               ></LinkButton>
               <LinkButton
-                text='Find dates'
+                text={hero.findDates}
                 type='secondary'
-                href='/#availability'
+                href={`${content.homePath}#availability`}
               ></LinkButton>
             </div>
           </div>
@@ -76,23 +82,24 @@ export default function Home() {
         id='experiences'
         className='flex flex-col items-center justify-center gap-12 px-4 sm:px-8'
       >
-        <h2 className='text-2xl sm:text-3xl md:text-4xl text-center'>Beautiful scenery at your doorstep</h2>
+        <h2 className='text-2xl sm:text-3xl md:text-4xl text-center'>{experiences.title}</h2>
         <div className='w-full flex justify-between flex-wrap gap-8'>
           <ExperienceCard
             header={{
               icon: <HikingIcon fontSize='inherit' />,
               title: 'Skuten',
-              subtitle: 'Nearby hiking trail'
+              subtitle: experiences.skuten.subtitle
             }}
             image={{
               src: '/images/skuten.jpeg',
-              alt: 'View of Skuten in Norway, a popular hiking trail close to the cabin',
-              sizes: '(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw',
+              alt: experiences.skuten.imageAlt,
+              sizes: experienceImageSizes,
               width: 3024,
               height: 4032
             }}
             footer={{
-              text: 'Skuten is one of many hiking trails in the area. The trip takes around 30 to 60 minutes.',
+              text: experiences.skuten.text,
+              readMore: experiences.readMore,
               link: 'https://ut.no/turforslag/116929377/skuten-pa-kirkeeide'
             }}
           />
@@ -100,17 +107,18 @@ export default function Home() {
             header={{
               icon: <DirectionsCarOutlinedIcon fontSize='inherit' />,
               title: 'Geiranger',
-              subtitle: '2 hour drive'
+              subtitle: experiences.geiranger.subtitle
             }}
             image={{
               src: '/images/geiranger.jpeg',
-              alt: 'View of Geiranger in Norway, a popular tourist destination a 2 hour drive from the cabin',
-              sizes: '(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw',
+              alt: experiences.geiranger.imageAlt,
+              sizes: experienceImageSizes,
               width: 3024,
               height: 4032
             }}
             footer={{
-              text: 'The beautiful views of Geiranger can be experienced through a 2 hour drive.',
+              text: experiences.geiranger.text,
+              readMore: experiences.readMore,
               link: 'https://www.visitnorway.no/reisemal/vestlandet/geirangerfjorden/'
             }}
           />
@@ -118,17 +126,18 @@ export default function Home() {
             header={{
               icon: <DirectionsCarOutlinedIcon fontSize='inherit' />,
               title: 'Lodalen',
-              subtitle: '1 hour drive'
+              subtitle: experiences.lodalen.subtitle
             }}
             image={{
               src: '/images/lodalen.jpeg',
-              alt: 'View of the glaciers in Lodalen, a popular tourist attraction close to the cabin',
-              sizes: '(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw',
+              alt: experiences.lodalen.imageAlt,
+              sizes: experienceImageSizes,
               width: 3024,
               height: 4032
             }}
             footer={{
-              text: "Lodalen is one of the world's most popular tourist attractions.",
+              text: experiences.lodalen.text,
+              readMore: experiences.readMore,
               link: 'https://www.nordfjord.no/lodalen'
             }}
           />
@@ -141,13 +150,13 @@ export default function Home() {
         className='flex flex-col xl:flex-row xl:items-center lg:gap-12 gap-8 px-4 sm:px-8'
       >
         <div className='flex flex-col gap-8 py-8 basis-1/3 grow shrink'>
-          <h2 className='text-2xl sm:text-3xl md:text-4xl text-left'>The cabin</h2>
+          <h2 className='text-2xl sm:text-3xl md:text-4xl text-left'>{cabin.title}</h2>
           <ul className='text-xl flex flex-col gap-6 wrap-break-word text-green'>
-            <li>The cabin accommodates up to 7 people</li>
-            <li>It is located in Stryn, a peaceful town in western Norway, address: strynevegen 253</li>
-            <li>There are many nearby mountain trails and tourist attractions, such as Loen Skylift and Geiranger</li>
+            {cabin.facts.map((fact) => (
+              <li key={fact}>{fact}</li>
+            ))}
             <li>
-              <p>The cabin is equipped with everything you need</p>
+              <p>{cabin.equipped}</p>
               <div className='text-4xl sm:text-5xl flex flex-wrap gap-4 mt-4 text-brown'>
                 <LocalLaundryServiceOutlinedIcon fontSize='inherit' />
                 <KitchenOutlinedIcon fontSize='inherit' />
@@ -166,7 +175,7 @@ export default function Home() {
         </div>
 
         <div className='items-center basis-1/2 shrink-0 max-w-(--breakpoint-lg)'>
-          <EmblaCarousel />
+          <EmblaCarousel labels={cabin.carousel} />
         </div>
       </section>
 
@@ -176,24 +185,24 @@ export default function Home() {
         className='flex flex-col justify-center gap-12 px-4 sm:px-8'
       >
         <div className='flex flex-col gap-6'>
-          <h2 className='text-2xl sm:text-3xl md:text-4xl text-left'>Availability Calendar</h2>
-          <p className='text-xl text-green'>Find the dates suited for your next holiday in the calendar below. Please call or send an email to book the cabin.</p>
+          <h2 className='text-2xl sm:text-3xl md:text-4xl text-left'>{availability.title}</h2>
+          <p className='text-xl text-green'>{availability.text}</p>
           <div className='flex gap-4'>
             <LinkButton
               icon={<CallOutlinedIcon />}
-              href='tel:+4791879843'
-              text='Call us'
+              href={contact.phoneHref}
+              text={content.nav.callUs}
             />
             <LinkButton
               icon={<AlternateEmailOutlinedIcon />}
-              href='mailto:Ytreeideferiehus@gmail.com?subject=Stryn Feriehytte booking&body=Hello, my name is __ and I would like to book Stryn Feriehytte from __ to __.'
-              text='Send mail'
+              href={mailHref}
+              text={availability.sendMail}
               type='secondary'
             />
           </div>
         </div>
         <div className='flex justify-between flex-wrap gap-8'>
-          <Calendar />
+          <Calendar labels={availability.calendar} />
         </div>
       </section>
 
@@ -202,25 +211,25 @@ export default function Home() {
         id='prices'
         className='flex flex-col items-center justify-center gap-12 px-4 sm:px-8'
       >
-        <h2 className='text-2xl sm:text-3xl md:text-4xl text-center'>Prices</h2>
+        <h2 className='text-2xl sm:text-3xl md:text-4xl text-center'>{prices.title}</h2>
         <div className='w-full grid grid-rows-3 lg:grid-rows-1 lg:grid-cols-3 gap-8'>
           <PriceCard
-            title='Cabin rental'
+            title={prices.cabin.title}
             icon={<CabinOutlinedIcon fontSize='inherit' />}
-            price='1500,- NOK'
-            description='The cost of renting the cabin one night.'
+            price={prices.formatPrice(pricesNok.cabin)}
+            description={prices.cabin.description}
           />
           <PriceCard
-            title='Final cleaning'
+            title={prices.cleaning.title}
             icon={<CleaningServicesOutlinedIcon fontSize='inherit' />}
-            price='700,- NOK'
-            description='If you need us to clean the cabin after your stay.'
+            price={prices.formatPrice(pricesNok.cleaning)}
+            description={prices.cleaning.description}
           />
           <PriceCard
-            title='Fresh sheets'
+            title={prices.sheets.title}
             icon={<BedOutlinedIcon fontSize='inherit' />}
-            price='120,- NOK'
-            description="We'll provide you with fresh sheets at the beginning of your stay."
+            price={prices.formatPrice(pricesNok.sheets)}
+            description={prices.sheets.description}
           />
         </div>
       </section>
