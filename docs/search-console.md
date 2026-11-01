@@ -138,7 +138,7 @@ Endringer utenfor nettsiden, som lenker fra andre sider, skrives inn her med dat
 
 ## Måling 2: desember 2026
 
-Fyll inn fra sammenligningen i Search Console. «Før» er 01.10.–30.10.2026, og «etter» er 15.11.–14.12.2026.
+Fyll inn fra sammenligningen i Search Console. «Før» er 01.10.–30.10.2026, og «etter» er 15.11.–14.12.2026. Oppdater også tabellene øverst i [README.md](../README.md).
 
 **Sammenlign plassering og klikkfrekvens, ikke antall visninger.** Desember er lavsesong, så visningene vil sannsynligvis falle uansett. Har Search Console tall for desember 2025 (den tar vare på 16 måneder), er det også nyttig å sammenligne med samme måned i fjor.
 
