@@ -74,7 +74,8 @@ export function vacationRentalJsonLd(content: Content) {
     containsPlace: {
       '@type': 'Accommodation',
       occupancy: { '@type': 'QuantitativeValue', maxValue: 7 },
-      amenityFeature: ['Wi-Fi', 'Washing machine', 'Kitchen', 'Shower', 'Fireplace', 'TV', 'Outdoor grill'].map((name) => ({
+      numberOfBedrooms: 3,
+      amenityFeature: ['Wi-Fi', 'Washing machine', 'Kitchen', 'Dishwasher', 'Shower', 'Fireplace', 'TV', 'Outdoor grill', 'Free parking'].map((name) => ({
         '@type': 'LocationFeatureSpecification',
         name,
         value: true
