@@ -97,7 +97,7 @@ export const nb: Content = {
   cabin: {
     title: 'Hytta',
     facts: [
-      'Hytta har 3 soverom og plass til opptil 7 personer',
+      'Hytta har 3 soverom med 7 enkeltsenger, 1 bad og plass til opptil 7 personer',
       'Den ligger i Stryn, et fredelig sted på Vestlandet, adresse: Strynevegen 253',
       'Gratis parkering ved hytta',
       'Det er mange turstier og turistattraksjoner i nærheten, som Loen Skylift og Geiranger'

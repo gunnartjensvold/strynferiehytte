@@ -55,6 +55,7 @@ export function vacationRentalJsonLd(content: Content) {
     '@type': 'VacationRental',
     // Google requires a stable ID for the property; it is the same on both language pages
     identifier: 'stryn-feriehytte',
+    additionalType: 'Cabin',
     name: siteName,
     description: content.meta.description,
     url: siteUrl + (content.homePath === '/' ? '/' : content.homePath),
@@ -66,6 +67,7 @@ export function vacationRentalJsonLd(content: Content) {
       streetAddress: 'Strynevegen 253',
       postalCode: '6783',
       addressLocality: 'Stryn',
+      addressRegion: 'Vestland',
       addressCountry: 'NO'
     },
     geo: {
@@ -78,6 +80,8 @@ export function vacationRentalJsonLd(content: Content) {
       additionalType: 'EntirePlace',
       occupancy: { '@type': 'QuantitativeValue', value: 7 },
       numberOfBedrooms: 3,
+      numberOfBathroomsTotal: 1,
+      bed: { '@type': 'BedDetails', numberOfBeds: 7, typeOfBed: 'Single' },
       amenityFeature: ['Wi-Fi', 'Washing machine', 'Kitchen', 'Dishwasher', 'Shower', 'Fireplace', 'TV', 'Outdoor grill', 'Free parking'].map((name) => ({
         '@type': 'LocationFeatureSpecification',
         name,
