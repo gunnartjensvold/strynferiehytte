@@ -9,7 +9,7 @@ export const nb: Content = {
   meta: {
     title: 'Hytteutleie i Stryn: hytte til leie for ferie | Stryn Feriehytte',
     description:
-      'Feriehus i Stryn for opptil 7 personer – perfekt for ferie på Vestlandet. Turstier rett ved, og Loen Skylift og Geiranger i nærheten. Bestill direkte.',
+      'Feriehus i Stryn for opptil 7 personer – perfekt for ferie på Vestlandet. Turstier, Loen Skylift og Geiranger i nærheten. Bestill på telefon eller e-post.',
     shareTitle: 'Stryn Feriehytte – hytte til leie i Stryn',
     shareImageAlt: 'Gul trehytte i Stryn med hage og grønne fjell bak'
   },
