@@ -4,7 +4,7 @@ import Button from './Button'
 import ArrowBackIosOutlinedIcon from '@mui/icons-material/ArrowBackIosOutlined'
 import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined'
 import { useState } from 'react'
-import { date } from '@/app/api/fetch-events/route'
+import type { date } from '@/app/api/fetch-events/route'
 import useSWR from 'swr'
 
 const fetchEvents = (): Promise<date[]> => fetch('/api/fetch-events').then((res) => res.json())
