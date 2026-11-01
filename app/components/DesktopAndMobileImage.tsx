@@ -16,6 +16,10 @@ type Props = {
     src: string
     width: number
     height: number
+    // A tiny version of the photo, shown blurred until the photo has loaded
+    blurDataURL?: string
+    blurWidth?: number
+    blurHeight?: number
   }
 }
 
@@ -30,7 +34,9 @@ export default function DesktopAndMobileImage({ shared, desktopImage, mobileImag
     props: { srcSet: mobile, ...rest }
   } = getImageProps({
     ...shared,
-    ...mobileImage
+    // Passed like a static import, so Next.js scales the blur to the tiny image instead of the full photo
+    src: mobileImage,
+    placeholder: mobileImage.blurDataURL ? 'blur' : 'empty'
   })
   return (
     <div className='relative'>
@@ -42,7 +48,9 @@ export default function DesktopAndMobileImage({ shared, desktopImage, mobileImag
         <source srcSet={mobile} />
         <img
           {...rest}
-          style={{ width: '100%', height: 'auto' }}
+          // getImageProps only uses priority to turn off lazy loading, so ask the browser for the image first here
+          fetchPriority={shared.priority ? 'high' : undefined}
+          style={{ ...rest.style, width: '100%', height: 'auto' }}
         />
       </picture>
     </div>
