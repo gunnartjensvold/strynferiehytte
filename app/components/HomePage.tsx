@@ -48,11 +48,13 @@ export default function HomePage({ content }: { content: Content }) {
       {/* Hero */}
       <section
         id='hero'
-        className='flex min-h-[min(100vw/3*4-50px,max(80vh,700px))] md:min-h-[min(100vw/4*3-50px,max(80vh,700px))] bg-black/30'
+        className='flex min-h-[min(100vw/3*4-50px,max(80vh,700px))] md:min-h-[min(100vw/4*3-50px,max(80vh,700px))] isolate bg-brown'
       >
         <div className='w-full flex relative pt-20 pb-8 items-center justify-center'>
+          {/* The section is isolated so the photo sits above its dark background, which is what
+              contrast checkers see behind the white text; the overlay darkens the photo to 35% */}
           <div className='absolute inset-0 flex items-center overflow-hidden -z-10'>
-            <div className='absolute inset-0 z-10 bg-black/50'></div>
+            <div className='absolute inset-0 z-10 bg-black/65'></div>
             <DesktopAndMobileImage
               shared={{ alt: hero.imageAlt, sizes: '100vw', priority: true }}
               desktopImage={{ src: '/images/desktop/hero.jpeg', breakPoint: 768, width: 4032, height: 3024 }}
