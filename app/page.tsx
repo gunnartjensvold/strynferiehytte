@@ -69,7 +69,7 @@ export default function Home() {
         id='experiences'
         className='flex flex-col items-center justify-center gap-12 px-4 sm:px-8'
       >
-        <h1 className='text-2xl sm:text-3xl md:text-4xl text-center'>Beautiful secenery at your doorstep</h1>
+        <h1 className='text-2xl sm:text-3xl md:text-4xl text-center'>Beautiful scenery at your doorstep</h1>
         <div className='w-full flex justify-between flex-wrap gap-8'>
           <ExperienceCard
             header={{
@@ -97,13 +97,13 @@ export default function Home() {
             }}
             image={{
               src: '/images/geiranger.jpeg',
-              alt: 'View of Geiranger in Norway, a popular hiking trail 2 hour drive from the cabin',
+              alt: 'View of Geiranger in Norway, a popular tourist destination a 2 hour drive from the cabin',
               sizes: '(min-width: 640px)33vw, (min-width: 768px) 50vw, 100vw',
               width: 3024,
               height: 4032
             }}
             footer={{
-              text: 'The beautiful views of geiranger can be experienced through a short 1 hour drive.',
+              text: 'The beautiful views of Geiranger can be experienced through a 2 hour drive.',
               link: 'https://www.visitnorway.no/reisemal/vestlandet/geirangerfjorden/'
             }}
           />
@@ -121,7 +121,7 @@ export default function Home() {
               height: 4032
             }}
             footer={{
-              text: 'Lodalen is one of the worlds most popular tourist attractions.',
+              text: "Lodalen is one of the world's most popular tourist attractions.",
               link: 'https://www.nordfjord.no/lodalen'
             }}
           />
@@ -136,7 +136,7 @@ export default function Home() {
         <div className='flex flex-col gap-8 py-8 basis-1/3 grow shrink'>
           <h1 className='text-2xl sm:text-3xl md:text-4xl text-left'>The cabin</h1>
           <ul className='text-xl flex flex-col gap-6 wrap-break-word text-green'>
-            <li>The cabin acommodates up to 7 people</li>
+            <li>The cabin accommodates up to 7 people</li>
             <li>It is located in Stryn, a peaceful town in western Norway, address: strynevegen 253</li>
             <li>There are many nearby mountain trails and tourist attractions, such as Loen Skylift and Geiranger</li>
             <li>
